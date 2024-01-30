@@ -38,6 +38,29 @@
     margin: 20px;
 }
 
+.inicio404{
+    color: white;
+    display: inline-block;
+    position: relative;
+}
+
+.inicio404:after {
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 0, 246);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.inicio404:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
 @media screen and (max-width:800px) {
     .textofooter404{
         text-align: center;

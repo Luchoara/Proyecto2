@@ -1,0 +1,119 @@
+/************NAVIGATOR************/
+nav{
+    background-color: #DB242A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-collapse{
+    display: flex;
+    justify-content: end;
+}
+.nav-link{
+    margin-right:20px;
+    border-radius: 5px;
+}
+.nav-link:hover{
+    background-color: #fff;
+}
+.navbar-logo{
+    width: 70px;
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+.navbar-logo:hover{
+    transform: scale(1.2); /* Cambia el tamaño de la imagen al 120%*/
+}
+
+
+/************FOOTER************/
+.footer{
+    width: 100%;
+    background-color: #0a141d;
+}
+.social-networks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box{
+    width: 30%;
+    text-align: end;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.logo-footer{
+    width: 70px;
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+.logo-footer:hover{
+    transform: scale(1.2); /* Cambia el tamaño de la imagen al 120%*/
+}
+.footer-link{
+    list-style: none;
+    display: inline;
+    padding: 30px;
+}
+.footer-link a{
+    text-decoration: none;
+    color: #fff;
+}
+.footer-link a:hover{
+    color: aqua;
+}
+.social-icons {
+    text-align: right;
+    margin: 0 30px;
+}
+.footer .social-networks{
+    width: 100%;
+    padding: 20px 0px;
+}
+.footer .social-networks .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.footer .social-networks .social-icons a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px; 
+    color: #fff;
+    margin-right: 10px;
+    background-color: #051726;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.footer .social-networks .social-icons a:hover{
+    color: aqua;
+}
+
+
+.footer .group-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width:800px){
+     .social-networks{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .box{
+        text-align: center;
+        width: 100%;
+    }
+    .social-icons{
+        text-align: center;
+    }
+}
+
+.group-2 a{
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto del contenedor padre */
+}

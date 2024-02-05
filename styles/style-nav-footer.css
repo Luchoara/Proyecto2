@@ -1,35 +1,50 @@
 /************NAVIGATOR************/
-header{
-    display: flex;
-    margin: 10px 10px;
-    background-color: rgb(224, 224, 224);
-}
-/*nav{
-    background-color: #DB242A;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar-collapse{
-    display: flex;
-    justify-content: end;
-}
-.nav-link{
-    margin-right:20px;
-    border-radius: 5px;
-}
-.nav-link:hover{
-    background-color: #fff;
-}
-.navbar-logo{
-    width: 70px;
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
-/*
-}
-.navbar-logo:hover{
-    transform: scale(1.2); /* Cambia el tamaño de la imagen al 120%
-}*/
 
+.navbar {
+    background-color: #051726;
+    display: flex;
+    width: 100%;
+}
+
+.inicio-sesion{
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-nav {
+    FONT-WEIGHT: 300;
+    display: flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.nav-item{
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+@media screen and (max-width: 1500px) {
+    .navbar-nav{
+        display: flex;
+        margin-left: 0%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-toggler{
+        margin-bottom: 10px;
+    }
+
+    .nav-item {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    
+}
 
 /************FOOTER************/
 .footer{

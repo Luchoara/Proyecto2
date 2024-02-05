@@ -60,7 +60,7 @@ window.onload = function () {
     
     // Configurar el botón de eliminar
     var imagenEliminar = document.createElement('img');
-    imagenEliminar.src = 'assets/delete.png';
+    imagenEliminar.src = '../assets/img/adminn/delete.png';
     imagenEliminar.alt = 'Eliminar';
     botonEliminar.appendChild(imagenEliminar);
     botonEliminar.onclick = function () {
@@ -69,7 +69,7 @@ window.onload = function () {
   
     // Configurar el botón que cambia entre dos imágenes
     var imagenCambiar = document.createElement('img');
-    imagenCambiar.src = 'assets/favorite0.png';
+    imagenCambiar.src = '../assets/img/adminn/favorite0.png';
     imagenCambiar.alt = 'Cambiar';
     botonCambiar.appendChild(imagenCambiar);
     botonCambiar.onclick = function () {
@@ -93,10 +93,10 @@ window.onload = function () {
   function cambiarImagenBoton(boton) {
     // Cambiar entre dos imágenes al hacer clic en el botón
     var imagenActual = boton.firstChild;
-    if (imagenActual.src.endsWith('assets/favorite0.png')) {
-      imagenActual.src = 'assets/favorite1.png';
+    if (imagenActual.src.endsWith('../assets/img/adminn/favorite0.png')) {
+      imagenActual.src = '../assets/img/adminn/favorite1.png';
     } else {
-      imagenActual.src = 'assets/favorite0.png';
+      imagenActual.src = '../assets/img/adminn/favorite0.png';
     }
   }
 

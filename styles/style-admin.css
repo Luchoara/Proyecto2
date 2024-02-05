@@ -1,11 +1,7 @@
-header{
-    display: flex;
-    margin: 10px 10px;
-    background-color: grey;
-}
 
-.bg-body{
-    background-color: rgb(212, 212, 212);
+
+#body-container{
+    background-color: #0D0D0D;
 }
 
 .body-button-container{
@@ -20,6 +16,7 @@ header{
 
 /* contenedor del formulario */
 .form-content{
+    
     display: flex;
     width: 20rem;
     height: 30rem;

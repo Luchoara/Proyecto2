@@ -57,10 +57,7 @@
     transition: transform 0.3s ease-out;
 }
 
-.inicio404:hover:after{
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
+
 @media screen and (max-width:800px) {
     .textofooter404{
         text-align: center;

@@ -1,9 +1,36 @@
 /************NAVIGATOR************/
 
-.navbar {
-    background-color: #051726;
+.navbar {  
+    background-color: #0a141d;
     display: flex;
+    flex-direction: row;
     width: 100%;
+}
+
+.container-navbar{
+    width: 100%;
+    display: flex;
+}
+
+#isotipo{
+    margin-left: 2%;
+}
+
+#navbarSupportedContent{
+
+}
+
+#login-container{
+    display: flex;
+    justify-content: end;
+}
+
+#login{
+    height: 40px;
+}
+
+#logout{
+    color: #a83d3d;
 }
 
 .inicio-sesion{
@@ -11,39 +38,28 @@
     width: auto;
     border-radius: 50%;
     object-fit: cover;
+    margin-left: 90%;
 }
 
 .navbar-nav {
-    FONT-WEIGHT: 300;
     display: flex;
-    width: auto;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-end;
+    flex-direction: column;
 }
 
 .nav-item{
-    margin-left: 10%;
-    margin-top: 1%;
+    margin-left: 5px;
 }
 
-@media screen and (max-width: 1500px) {
-    .navbar-nav{
-        display: flex;
-        margin-left: 0%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+#isotipo {
+    margin-top: 0.3%;
+    display: block;
+}
 
-    .navbar-toggler{
-        margin-bottom: 10px;
+/* Consulta de medios: Pantallas pequeñas (hasta 600px) */
+@media screen and (max-width: 990px) {
+    #isotipo {
+        display: none;
     }
-
-    .nav-item {
-        margin-left: 0%;
-        margin-top: 0%;
-    }
-    
 }
 
 /************FOOTER************/

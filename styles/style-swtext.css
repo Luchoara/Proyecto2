@@ -51,7 +51,8 @@
     animation: intro 60s linear infinite;
     animation-play-state: paused;
     animation-iteration-count: 1;
-    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
     transform: translateY(1000px);
     z-index: 2;
   }
@@ -98,11 +99,11 @@
       transform: perspective(200px) rotateX(14deg) translateY(800px);
       opacity: 1;
     }
-    99% {
-      opacity: 0.5;
+    70% {
+      opacity: 0.7;
     }
     100% {
-      transform: perspective(200px) rotateX(20deg) translateY(-1000px);
+      transform: perspective(200px) rotateX(20deg) translateY(-3000px);
       opacity: 0;
     }
   }
@@ -113,7 +114,7 @@
         transform: perspective(200px);
         opacity: 1;
       }
-      80% {
+      50% {
         opacity: 0.5;
       }
       100% {

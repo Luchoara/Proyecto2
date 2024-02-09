@@ -50,14 +50,21 @@
     transform: perspective(200px) rotateX(14deg);
     animation: intro 60s linear infinite;
     animation-play-state: paused;
+    animation-iteration-count: 1;
+    animation-delay: 7s;
+    transform: translateY(1000px);
     z-index: 2;
   }
 
   #startButton {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 25%;
+    left: 25%;
+    animation: backfade 12s linear infinite;
+    animation-play-state: paused;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
   }
 
   #sw-controls {
@@ -91,11 +98,27 @@
       transform: perspective(200px) rotateX(14deg) translateY(800px);
       opacity: 1;
     }
-    90% {
+    60% {
       opacity: 0.5;
     }
     100% {
       transform: perspective(200px) rotateX(20deg) translateY(-1000px);
       opacity: 0;
     }
+  }
+
+  @keyframes backfade {
+    0% {
+        animation-delay: 1s;
+        transform: perspective(200px);
+        opacity: 1;
+      }
+      90% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: perspective(200px) translateZ(-1000px);
+        opacity: 0;
+        visibility: hidden;
+      }
   }

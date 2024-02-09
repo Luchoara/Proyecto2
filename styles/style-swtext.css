@@ -1,0 +1,101 @@
+
+.sw-container {
+    overflow: hidden;
+    background-color: black;
+    background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+  }
+  
+.sw-container h2 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 5rem;
+  }
+
+.sw-container h3 {
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+  }
+
+.sw-container p {
+    font-size: 3rem;
+    line-height: 6rem;
+    margin-bottom: 20px;
+  }
+  
+  .star-wars :is(h2, p) {
+    color: var(--main);
+  }
+
+  #startButton {
+    background-color: transparent;
+    border: none;
+  }
+
+  .sw-container img{
+    height: 20vw;
+    background-color: rgba(255, 255, 255, 0);  
+  }
+
+  #sw-text {
+    color:#fffc2e;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    padding: 40px;
+    text-align: justify;
+    margin: 0 auto;
+    letter-spacing: 1.5px;
+    width: 50%;
+    height: 800px;
+    transform: perspective(200px) rotateX(14deg);
+    animation: intro 60s linear infinite;
+    animation-play-state: paused;
+    z-index: 2;
+  }
+
+  #startButton {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #sw-controls {
+    display: flex;
+    justify-content: right;
+    margin: 50px 50px;
+    z-index: 100;
+  }
+
+  #sw-controls-box{
+    display: none;
+    background-color: rgba(162, 162, 162, 0.163);
+    padding: 10px;
+    border-radius: 20px;
+    z-index: 100;
+  }
+
+  #volumeSlider {
+    z-index: 100;
+}
+
+  #pauseButton{
+    border-radius: 10px;
+    z-index: 100;
+  }
+  
+
+  
+  @keyframes intro {
+    0% {
+      transform: perspective(200px) rotateX(14deg) translateY(800px);
+      opacity: 1;
+    }
+    90% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: perspective(200px) rotateX(20deg) translateY(-1000px);
+      opacity: 0;
+    }
+  }

@@ -87,8 +87,13 @@ a{
     border-radius:15px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
     transition: .3s ease-in-out;
+    box-sizing: border-box;
+    padding: 5px;
 }
-
+.carrusel a img:hover{
+    border: 2px solid #ffffff;
+    transition: border 0.1s ease;
+}
 @media (min-width: 768px) {
     .carrusel{
         width: 275px;

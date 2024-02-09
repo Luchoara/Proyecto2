@@ -1,7 +1,8 @@
+
 document.getElementById("startButton").addEventListener("click", function() {
+    moveButton();
     document.getElementById("sw-text").style.animationPlayState = "running";
     document.getElementById("sw-audio").play(); // Reproducir el audio
-    document.getElementById("startButton").style.animationPlayState = "running";
     document.getElementById("sw-controls-box").style.display = "block";
   });
 
@@ -26,3 +27,12 @@ document.getElementById("startButton").addEventListener("click", function() {
     document.getElementById("sw-audio").volume = volume;
   });
   
+  function moveButton() {
+    var button = document.getElementById("startButton");
+    button.classList.add("backfade");
+  
+    // Después de 500 milisegundos, remover la clase "moved" para volver al estado inicial
+    setTimeout(function() {
+      button.classList.remove("backfade");
+    }, 115000);
+  }

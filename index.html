@@ -57,6 +57,45 @@
   </header>
   <body>
     
+    <audio id="sw-audio" src="assets/audio/sw_intro.mp3" volume="0.1"></audio>
+
+    <div class="sw-container">
+      <link rel="stylesheet" href="../styles/style-swtext.css">
+      
+      <button id="startButton"><img src="../assets/resources/logo-starwatch.png"></button>
+      
+      <div class="star-wars" id="sw-text">
+
+        <p>
+          Es un periodo de guerras civiles en la galaxia. Una valiente alianza 
+          de programadores web clandestinos ha desafiado la tiranía y opresión 
+          del impresionante IMPERIO JAVASCRIPT.
+  
+  
+        </p>
+        <p>
+          Atacando desde una fortaleza oculta entre los mil millones de lineas de codigo de la galaxia, 
+          las naves espaciales rebeldes han logrado su primera victoria en una batalla contra la poderosa 
+          Flota Orientada a Objetos. El IMPERIO teme que otra derrota pueda llevar a otras comisiones más a unirse a la 
+          rebelión, y el control Imperial sobre el DOM y el BOM se perdería para siempre.
+  
+        </p>
+        <p>
+          Para aplastar la rebelión de una vez por todas, el IMPERIO está construyendo una siniestra nueva estación de combate. 
+          Lo suficientemente poderosa como para destruir una página web entera, su finalización significa la perdición segura para los campeones de la libertad.
+        </p>
+      </div>
+  
+      <div id="sw-controls">
+        <div id="sw-controls-box">
+          <input type="range" min="0" max="100" value="50" id="volumeSlider">
+          <button id="pauseButton">Pausar</button>
+        </div>
+      </div>
+      
+    <script src="scripts/Acerca/script-swtext.js"></script>
+    </div>
+
     <header>
       <section class="section1 section1-bg-init">
         <div class="container_init">

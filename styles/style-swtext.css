@@ -6,12 +6,14 @@
   }
   
 .sw-container h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     margin: 0 0 10px 0;
     font-size: 5rem;
   }
 
 .sw-container h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     margin: 0 0 10px 0;
     font-size: 2rem;
@@ -48,24 +50,25 @@
     width: 50%;
     height: 800px;
     transform: perspective(200px) rotateX(14deg);
-    animation: intro 60s linear infinite;
+    animation: intro 100s linear;
     animation-play-state: paused;
-    animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    animation-delay: 10s;
+    animation-iteration-count: 1;
+    animation-delay: 5s;
     transform: translateY(1000px);
     z-index: 2;
   }
 
   #startButton {
-    position: fixed;
+    position: absolute;
     top: 25%;
     left: 25%;
-    animation: backfade 12s linear infinite;
-    animation-play-state: paused;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  }
+
+  #startButton.backfade {
+    animation: backfade 12s linear;
     animation-delay: 2s;
+    animation-fill-mode: forwards;
   }
 
   #sw-controls {
@@ -110,7 +113,6 @@
 
   @keyframes backfade {
     0% {
-        animation-delay: 1s;
         transform: perspective(200px);
         opacity: 1;
       }
@@ -120,6 +122,5 @@
       100% {
         transform: perspective(200px) translateZ(-1000px);
         opacity: 0;
-        visibility: hidden;
       }
   }

@@ -89,10 +89,13 @@ a{
     transition: .3s ease-in-out;
     box-sizing: border-box;
     padding: 5px;
+    filter:brightness(0.6);
+    
 }
 .carrusel a img:hover{
     border: 2px solid #ffffff;
     transition: border 0.1s ease;
+    filter:brightness(1);
 }
 @media (min-width: 768px) {
     .carrusel{

@@ -1,0 +1,53 @@
+body {
+    overflow: hidden;
+    background-color: black;
+    background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+}
+
+.boton-tabla {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.body-table-container {
+    padding: 5vw;
+}
+
+.body-button-container{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 1vw;
+}
+
+.table {
+    border-radius: 20px;
+    overflow: hidden;
+    table-layout: auto;
+}
+  
+.table th, .table td {
+    border: 1px solid #dee2e6;
+    vertical-align: top;
+}
+
+.table th:first-child {
+    text-align: center;
+  }
+
+.table th:last-child, .table td:last-child {
+  width: 200px;
+  text-align: center;
+}
+
+.table th:nth-last-child(2), .table td:nth-last-child(2) {
+  width: 100px;
+  text-align: center;
+}
+
+.table td:nth-last-child(3) {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

@@ -47,8 +47,8 @@ window.onload = function () {
   
     // Agregar botones a la celda de acciones
     var botonEliminar = document.createElement('button');
-    var botonCambiar = document.createElement('button');
-    var botonOtro = document.createElement('button');
+    var botonFavorito = document.createElement('button');
+    var botonEditar = document.createElement('button');
 
     // Crear un checkbox y configurarlo
     var checkboxColumna4 = document.createElement('input');
@@ -60,43 +60,52 @@ window.onload = function () {
     
     // Configurar el botón de eliminar
     var imagenEliminar = document.createElement('img');
-    imagenEliminar.src = 'assets/delete.png';
+    imagenEliminar.src = '../assets/img/admin_/delete.png'
     imagenEliminar.alt = 'Eliminar';
     botonEliminar.appendChild(imagenEliminar);
+    botonEliminar.classList.add("boton-tabla")
     botonEliminar.onclick = function () {
       eliminarFila(tabla, nuevaFila, fila);
     };
   
-    // Configurar el botón que cambia entre dos imágenes
-    var imagenCambiar = document.createElement('img');
-    imagenCambiar.src = 'assets/favorite0.png';
-    imagenCambiar.alt = 'Cambiar';
-    botonCambiar.appendChild(imagenCambiar);
-    botonCambiar.onclick = function () {
-      cambiarImagenBoton(botonCambiar);
+    // Configurar el botón favoritos
+    var imagenFavorito = document.createElement('img');
+    imagenFavorito.src = '../assets/img/admin_/favorite0.png';
+    imagenFavorito.alt = 'Favorito';
+    botonFavorito.appendChild(imagenFavorito);
+    botonFavorito.classList.add("boton-tabla")
+    botonFavorito.onclick = function () {
+      cambiarImagenBoton(botonFavorito);
     };
   
-    // Configurar el botón adicional con una imagen
-    var imagenOtro = document.createElement('img');
-    imagenOtro.src = 'otro-icono.png';
-    imagenOtro.alt = 'Otro';
-    botonOtro.appendChild(imagenOtro);
-    botonOtro.onclick = function () {
+    // Configurar el botón editar
+    var imagenEditar = document.createElement('img');
+    imagenEditar.src = '../assets/img/admin_/edit.png';
+    imagenEditar.alt = 'Editar';
+    botonEditar.appendChild(imagenEditar);
+    botonEditar.classList.add("boton-tabla")
+    botonEditar.onclick = function () {
+      cargarDatosEnModalEditar(fila);
     };
   
     // Agregar botones a la celda de acciones
     celdaBotones.appendChild(botonEliminar);
-    celdaBotones.appendChild(botonCambiar);
-    celdaBotones.appendChild(botonOtro);
+    celdaBotones.appendChild(botonFavorito);
+    celdaBotones.appendChild(botonEditar);
+
+    // Agregar evento de clic al botón de editar
+    botonEditar.addEventListener('click', function() {
+      cargarDatosEnModalEditar(fila);
+  });
   }
   
   function cambiarImagenBoton(boton) {
-    // Cambiar entre dos imágenes al hacer clic en el botón
+    // cambiar entre dos imágenes al hacer clic en el botón
     var imagenActual = boton.firstChild;
-    if (imagenActual.src.endsWith('assets/favorite0.png')) {
-      imagenActual.src = 'assets/favorite1.png';
+    if (imagenActual.src.endsWith('admin_/favorite0.png')) {
+      imagenActual.src = '../assets/img/admin_/favorite1.png';
     } else {
-      imagenActual.src = 'assets/favorite0.png';
+      imagenActual.src = '../assets/img/admin_/favorite0.png';
     }
   }
 
@@ -144,4 +153,34 @@ window.onload = function () {
       localStorage.setItem('filas', JSON.stringify(datos));
     }
   }
+
+  function cargarDatosEnModalEditar(fila) {
+    document.getElementById('inputEditarColumna1').value = fila.columna1;
+    document.getElementById('inputEditarColumna2').value = fila.columna2;
+    document.getElementById('inputEditarColumna3').value = fila.columna3;
+    abrirModalEditar();
+  }
+  
+
+  function abrirModalEditar() {
+    document.getElementById('modalEditar').style.display = 'block';
+  }
+  
+  function cerrarModalEditar() {
+    document.getElementById('modalEditar').style.display = 'none';
+  }
+  
+  function guardarEdicion() {
+    // Obtener los valores editados desde el modal
+    var nuevoValorColumna1 = document.getElementById('inputEditarColumna1').value;
+    var nuevoValorColumna2 = document.getElementById('inputEditarColumna2').value;
+    var nuevoValorColumna3 = document.getElementById('inputEditarColumna3').value;
+  
+    // Actualizar los datos en la tabla y en el almacenamiento local
+    // (Puedes implementar esta función según cómo estés almacenando y actualizando los datos en tu aplicación)
+    
+    // Cerrar el modal después de guardar la edición
+    cerrarModalEditar();
+  }
+  
   

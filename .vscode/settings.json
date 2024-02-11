@@ -1,3 +1,6 @@
 {
-    "workbench.tree.indent": 4
+    "workbench.tree.indent": 4,
+    "editor.tabSize": 2,
+    "prettier.embeddedLanguageFormatting": "off",
+    "indentRainbow.indicatorStyle": "classic"
 }

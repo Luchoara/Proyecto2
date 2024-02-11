@@ -6,11 +6,8 @@
     <meta name="author" content="" />
     <title>Login</title>
     <!-- styles -->
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/user_styles.css" />
     <!-- End styles -->
-    <!-- contact css -->
-    <link rel="stylesheet" href="#" />
-    <!-- end contact css -->
   </head>
   <!--:::::NAVBAR:::::-->
   <header>
@@ -22,62 +19,47 @@
     <!-- Form -->
     <section class="contenedoor">
     <div class="form-content">
-      <div class="form-heather"><h3>Inicia Sesión</h3></div>    
-      <div class="sign-up-form"> 
-                <form class="form1" method="post">
-          <div class="form-floating">
-            <input
+      <div class="form-heather"><h3>Inicia Sesion</h3></div>
+        <div class="sign-up-form">
+          <form class="loginForm" id= "loginForm" method="post">
+            <div class="form-floating">
+              <input
               type="text"
               class="form-control"
-              id="floatingUsername"
+              id="loginUsername"
               placeholder="Usuario"
               minlength="4"
               maxlength="10"
               required
-            />
-            <label for="floatingUsername" class="form-label"></label>
-          </div>
-          
-          <div class="form-floating">
-          
-            <input
+              />
+              <label for="loginUsername" class="form-label"></label>
+            </div>
+            <div class="form-floating">
+              <input
               type="password"
               class="form-control"
-              id="pwd1"
+              id="loginPassword"
               placeholder="Contraseña"
-              minlength="7"
-              maxlength="20"
-              required
-            />
-            <label for="pwd1" class="form-label"></label>
-          </div>
-          <div class="form-floating">
-            <input
-              type="password"
-              class="form-control"
-              id="pwd2"
-              placeholder="Confirmar Contraseña"
-              minlength="7"
-              maxlength="20"
-              required
-            />
-            <label for="pwd2" class="form-label" data-pwd="pwd1"></label>
-          </div>
-        </div>
-        <a href="#">
-        <p class="olvidar">¿Olvidaste tu contraseña?</p> 
-      </a>
-          <div class="b-send col-12">
-            <button class="btn btn-primary botonL" type="submit" href="/404.html">
+              
+              />
+              <label for="loginPassword" class="form-label"></label>
+            </div>
+            <div class="b-send col-12">
+              <button class="btn btn-primary" type="submit" href="/404.html">
               Iniciar Sesion
-            </button>
-          </div>
-          <div class="b-send col-12">
-            <a class="btn btn-primary volver" type="button" href="/index.html">Volver</a>
-          </div>
-        </form>
+              </button>
+            </div>
+            <div>
+              <a href="../html/reset_pass_form.html" id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="b-send col-12">
+              <a class="btn btn-primary" type="button" href="../index.html">Volver</a>
+            </div>
+          </form>
+        </div>
       </div>
-  </section>
+    </section>
+
     <!-- end form -->
     <!-- footer -->
     <footer class="footer-site">
@@ -97,5 +79,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- end Iconos -->
+    <script src="../scripts/login_script.js"></script>
   </body>
 </html>

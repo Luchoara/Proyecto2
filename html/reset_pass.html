@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password olvidado</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="../styles/user_styles.css">
+</head>
+<body class="bg-body">
+  <h1>Así que te olvidaste tu contraseña??</h1>
+  
+  <section class="contenedoor">
+    <div class="form-content">
+      <div class="form-heather"><h4>Solicitud de contraseña</h4></div> 
+      <form class="resetPassForm" id="resetPassForm" method="post">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="resetPassUsername"
+            placeholder="Usuario"
+            minlength="4"
+            maxlength="10"
+            
+          />
+          <label for="resetPassUsername" class="form-label"></label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="resetPassEmail"
+            placeholder="Email"
+            minlength="4"
+            maxlength="20"
+            
+          />
+          <label for="resetPassEmail" class="form-label"></label>
+        </div>
+        <div class="b-send col-12">
+          <button class="btn btn-primary botonL" type="submit" href="nuevo_pass.html">
+          Enviar solicitud
+          </button>
+        </div>
+        <div>
+          <a href="../html/registro.html" id="registroForm">Crear una cuenta</a>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="../scripts/reset_pass.js"></script>
+</body>
+</html>

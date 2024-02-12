@@ -45,88 +45,68 @@
     </div>
   </header>
 
-<body>
+  <body>
 
-    
-
-    <div class="body-table-container">
-
-      <div class="body-button-container">
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          + Agregar Pelicula
-        </button>
-  
-        <!-- Modal Agregar -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Pelicula</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="tituloPelicula" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" id="inputColumna1">
-                  </div>
-                  <div class="mb-3">
-                    <label for="categoriaPelicula" class="form-label">Categoria</label>
-                    <input type="text" class="form-control" id="inputColumna2">
-                  </div>
-                  <div class="mb-3">
-                    <label for="descripcionPelicula" class="form-label">Descripcion</label>
-                    <textarea type="text" class="form-control" id="inputColumna3"></textarea>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="agregarFila()">Agregar</button>
-              </div>
+    <div id="tablaContainer">
+      <h3>Administrar Peliculas</h3>
+    <table id="miTabla" border="1">
+        <tr>
+          <th>Número de Fila</th>
+          <th>Película</th>
+          <th>Categoría</th>
+          <th>Sinopsis</th>
+          <th>Publicado</th>
+          <th>Acciones</th>
+        </tr>
+      </table>
+      
+      <button id="agregar" onclick="abrirModalAgregar()">Agregar Fila</button>
+      
+      <!-- Modal de Agregar Fila -->
+      <div id="modalAgregar" class="modal">
+        <div class="modal-content">
+          <h4>Agregar Pelicula</h4>
+            <input type="text" id="inputPelicula" placeholder="Película">
+            <select id="selectCategoriaAgregar">
+              <option value="">Seleccionar categoría</option>
+              <option value="accion">Acción</option>
+              <option value="aventura">Aventura</option>
+              <option value="comedia">Comedia</option>
+              <option value="drama">Drama</option>
+              <option value="terror">Terror</option>
+            </select>
+            <input type="text" id="inputSinopsis" placeholder="Sinopsis">
+            <input type="file" id="inputImagen" accept="image/*" placeholder="Portada de la película">
+            <div class="modal-btns">
+                <button id="aceptar" onclick="agregarFila()">Agregar</button>
+                <button id="cancelar" onclick="cerrarModalAgregar()">Cancelar</button>
             </div>
+        </div>
+      </div>
+      
+      <!-- Modal de Editar Fila -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <input type="text" id="editInput1"> <!-- Película -->
+          <select id="selectCategoriaEditar">
+            <option value="">Seleccionar categoría</option>
+            <option value="Accion">Acción</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Terror">Terror</option>
+          </select>
+          <input type="text" id="editInput3"> <!-- Sinopsis -->
+          <div class="modal-btns">
+            <button id="aceptar" onclick="guardarCambios()">Guardar</button>
+            <button id="cancelar" onclick="cerrarModal()">Cancelar</button>
           </div>
         </div>
       </div>
-
-      <table class="table table-hover table-bordered " id="tablaPeliculas"> <!--no cambiar id tablaPeliculas, se usa en el js-->
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Pelicula</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Publicado</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-      </table>
-
-      <script src="../scripts/Admin_/script-adminpelicula.js"></script>
-
+      
     </div>
-
-    
-
-  <div id="modalEditar" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="cerrarModalEditar()">&times;</span>
-        <h2>Editar Película</h2>
-        <input type="text" id="inputEditarColumna1" placeholder="Título">
-        <input type="text" id="inputEditarColumna2" placeholder="Categoría">
-        <input type="text" id="inputEditarColumna3" placeholder="Descripción">
-        <button onclick="guardarEdicion()">Guardar</button>
-      </div>
-    </div>
-
-     <!-- footer -->
-     <footer class="footer-site">
-      <div>Facebook</div>
-      <div>Instagram</div>
-      <div>Twitter</div>
-    </footer>
-    <!-- end footer -->
 
 </body>
+<script src="../scripts/Admin_/script-adminpelicula.js"></script>
+
 </html>

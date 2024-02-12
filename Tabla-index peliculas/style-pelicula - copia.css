@@ -1,0 +1,21 @@
+#divsContainer{
+    display: flex;
+    background-color: blueviolet;
+    padding: 1vw;
+}
+
+.div-pelicula{
+    background-color: aquamarine;
+    padding: 1%;
+    max-height: 70px;
+}
+
+.titulo-pelicula{
+    width: 100%;
+    background-color: yellow;
+}
+
+.sinopsis-pelicula{
+    width: 100%;
+    background-color: tomato;
+}

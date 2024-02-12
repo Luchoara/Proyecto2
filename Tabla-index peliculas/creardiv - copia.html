@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style-pelicula.css">
+<title>Crear Div</title>
+</head>
+<body>
+<div id="divsContainer"></div>
+
+<script>
+window.onload = function() {
+  // Mostrar los divs en la página
+  mostrarDivs();
+  
+  // Agregar un listener para el evento de actualización del localStorage
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'filas') {
+      mostrarDivs();
+    }
+  });
+}
+
+function mostrarDivs() {
+  var divsContainer = document.getElementById("divsContainer");
+  divsContainer.innerHTML = ""; // Elimina todos los divs existentes antes de agregar los nuevos
+
+  // Obtener las filas guardadas del localStorage
+  var filasGuardadas = JSON.parse(localStorage.getItem("filas")) || [];
+
+  // Iterar sobre las filas y crear los divs
+  filasGuardadas.forEach(function(filaData) {
+    if (filaData.texto1 && filaData.texto2) {
+      var nuevoDiv = document.createElement("div");
+      nuevoDiv.className = "div-pelicula";
+      nuevoDiv.innerHTML = "<p class='titulo-pelicula'>" + filaData.texto1 + "</p><p class='sinopsis-pelicula'>" + filaData.texto2 + "</p>";
+
+      // Agregar el div al contenedor
+      divsContainer.appendChild(nuevoDiv);
+    }
+  });
+}
+
+</script>
+
+</body>
+</html>

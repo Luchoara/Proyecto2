@@ -12,8 +12,9 @@
   
   <section class="contenedoor">
     <div class="form-content">
-      <div class="form-heather"><h4>Solicitud de contraseña</h4></div> 
-      <form class="resetPassForm" id="resetPassForm" method="post">
+      <div><h2>Solicitud de contraseña</h2></div>
+      <div><h5>Recibe la solicitud para <br> recuperar tu contraseña</h5></div> 
+      <form class="forgotPass" id="forgotPass" method="post">
         <div class="form-floating">
           <input
             type="text"
@@ -33,22 +34,20 @@
             id="resetPassEmail"
             placeholder="Email"
             minlength="4"
-            maxlength="20"
+            maxlength="25"
             
           />
           <label for="resetPassEmail" class="form-label"></label>
         </div>
         <div class="b-send col-12">
-          <button class="btn btn-primary botonL" type="submit" href="nuevo_pass.html">
-          Enviar solicitud
+          <button class="btn btn-primary botonL" type="submit" href="resetPass.html">
+          Enviar
           </button>
-        </div>
-        <div>
-          <a href="../html/registro.html" id="registroForm">Crear una cuenta</a>
         </div>
       </form>
     </div>
   </section>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="../scripts/reset_pass.js"></script>
 </body>
 </html>

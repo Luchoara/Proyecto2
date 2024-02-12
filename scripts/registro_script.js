@@ -1,51 +1,47 @@
+registro = document.getElementById("registroForm")
 
-/** Listener Registro */
+registro.addEventListener("submit", function(event) {
+  event.preventDefault(); // Evitar envío del formulario
 
-document.addEventListener("DOMContentLoaded", () => {
+  // Obtener valores de entrada
+  const nombre = document.getElementById("registroNombre").value;
+  const apellido = document.getElementById("registroApellido").value;
+  const nombreUsuario = document.getElementById("registroUsuario").value;
+  const email = document.getElementById("registroEmail").value;
+  const password = document.getElementById("registroPassword").value;
+  const confirmPassword = document.getElementById("confirmarPassword").value;
 
-  const formulario = document.getElementById("registroForm")
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault(); 
-
-    const nombre = document.getElementById("registroNombre").value;
-    const apellido = document.getElementById("registroApellido").value;
-    const username = document.getElementById("registroUsername").value;
-    const email = document.getElementById("registroEmail").value;
-    const password = document.getElementById("registroPassword").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
-
-
-    if (!validateForm(nombre, apellido, username, email, password, confirmPassword)) {
+  // Validar
+  if (!validateForm(nombre, apellido, nombreUsuario, email, password, confirmPassword)) {
       return; 
   }
+  console.log(validateForm)
 
-  // Nuevo usuario
-    const usuario = {
+  // Crear objeto de usuario
+  const usuario = {
       nombre: nombre,
       apellido: apellido,
-      username: username,
-      email: email,
+      nombreUsuario: nombreUsuario,
+      email:email,
       password: password
   };
 
-    localStorage.setItem(username, JSON.stringify(usuario));
 
-    //* print para checkeo -- ELIMINAR --
+  localStorage.setItem(nombreUsuario, JSON.stringify(usuario));
 
-    alert("Registro exitoso. Por favor, inicia sesión.");
+ // test ELIMINAR
+  alert("Registro exitoso. Por favor, inicia sesión.");
 
-    // enviar al index.html con boton usuario en vez de login
-    location.replace('index_user.html')
+// test ELIMINAR
+  console.log(usuario)
 
-  /* no funca el reset
-  this.reset();
-  */
-  });
+  document.getElementById("registroForm").reset();
 });
 
-function validateForm(nombre, apellido, username, email, password, confirmPassword) {
+// Validacion
+function validateForm(nombre, apellido, nombreUsuario, email, password, confirmPassword) {
   
-  if (nombre.trim() === '' || apellido.trim() === '' || username.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+  if (nombre.trim() === '' || apellido.trim() === '' || nombreUsuario.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       alert("Por favor, completa todos los campos.");
       return false;
   }

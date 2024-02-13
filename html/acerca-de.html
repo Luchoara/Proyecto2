@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acerca de | Star Watch</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../styles/style-nav-footer.css" />
+    <link rel="stylesheet" href="/styles/style-AboutUs.css" />
+    <link rel="stylesheet" href="../styles/style-swtext.css" />
+    <!-- Iconos footer -->
+    <script
+      src="https://kit.fontawesome.com/eb496ab1a0.js"
+      crossorigin="anonymous"
+      v
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container-navbar">
+        <a id="isotipo">
+          <img src="../assets/img/navbar/isotipo.png">
+        </a>
+      <div class="container-fluid">
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <img src="../assets/img/navbar/isotipo.png">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item" id="inicio">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/error404.html">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/admin.html">Administrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="container-fluid" id="login-container">
+        <button type="button" class="btn btn-primary" id="login" style="display: block;">Iniciar Sesion</button>
+        <div>
+          <div class="btn-group" id="dropdown" style="display: none;">
+            <button type="button" class="btn"><img src="../assets/img/navbar/avatar.png"></button>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+            </button>  
+              <div class="dropdown">
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Perfil</a></li>
+                      <li><a class="dropdown-item" href="#">Mi lista</a></li>
+                      <li><a class="dropdown-item" href="#">Descargas</a></li>
+                      <li><a class="dropdown-item" href='#' id="logout"">Salir</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div> 
+      </div>
+  
+      </div>
+    </nav>
+    <header>
+      <section class="section1 section-intro">
+        <audio
+      id="sw-audio"
+      src="../assets/audio/sw_intro.mp3"
+      volume="0.1"
+    ></audio>
+    <div class="sw-container">
+      <button id="startButton">
+        <img src="../assets/resources/logo-starwatch-blackbg.png" />
+      </button>
+
+      <div class="star-wars" id="sw-text">
+        <h2>PROYECTO II:</h2>
+        <h3>PAGINA DE STREAMING</h3>
+        <p>
+          Es un periodo de guerras civiles en la galaxia. Una valiente alianza
+          de programadores web clandestinos ha desafiado la tiranía y opresión
+          del impresionante IMPERIO JAVASCRIPT.
+        </p>
+        <p>
+          Atacando desde una fortaleza oculta entre los mil millones de lineas
+          de codigo de la galaxia, las naves espaciales rebeldes han logrado su
+          primera victoria en una batalla contra la poderosa Flota Orientada a
+          Objetos. El IMPERIO teme que otra derrota pueda llevar a otras
+          comisiones más a unirse a la rebelión, y el control Imperial sobre el
+          DOM y el BOM se perdería para siempre.
+        </p>
+        <p>
+          Para aplastar la rebelión de una vez por todas, el IMPERIO está
+          construyendo una siniestra nueva estación de combate. Lo
+          suficientemente poderosa como para destruir una página web entera, su
+          finalización significa la perdición segura para los campeones de la
+          libertad.
+        </p>
+      </div>
+      <div id="sw-controls">
+        <div id="sw-controls-box">
+          <input type="range" min="0" max="100" value="50" id="volumeSlider" />
+          <button id="pauseButton">Pausar</button>
+        </div>
+      </div>
+      <script src="../scripts/Acerca/script-swtext.js"></script>
+    </div>
+    </section>
+    </header>
+    <main>
+      <section class="section-welcome">
+        <div class="container-welcome">
+          <h1>Bienvenido a Star Watch: Donde la Fuerza Te Acompaña en Cada Reproducción</h1>
+          <p>
+            Prepárate para un viaje épico a través de la galaxia, donde cada película y 
+            serie es una ventana a un universo de posibilidades infinitas.
+            Únete a Star Watch y que la Fuerza te guíe en tu búsqueda de entretenimiento inigualable.
+          </p>
+          <a href="#"
+            ><button type="button" class="btn btn-warning">Leer más</button></a
+          >
+        </div>
+      <div class="container-welcome-img">
+        <video class="video-welcome" src="../assets/video/intro2starwars.mp4" autoplay loop muted></video>
+      </div>
+      </section>
+      <section class="section3 section-cards">
+        <h2>Lo Que Nos Hace Únicos</h2>
+        <div class="container-cards">
+          <div class="card card1" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Explora la Galaxia Star Wars:</h5>
+              <p class="card-text">
+                Sumérgete en un catálogo repleto de las películas, 
+                series y documentales más emblemáticos de Star Wars. Desde los orígenes de 
+                la Fuerza hasta las batallas intergalácticas más intensas, tenemos todo lo 
+                que necesitas para satisfacer tu sed de aventuras.
+              </p>
+            </div>
+          </div>
+          <div class="card card2" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Calidad Jedi:</h5>
+              <p class="card-text">
+                Nuestra plataforma utiliza la tecnología más avanzada para garantizar
+                una experiencia de streaming sin igual. Con calidad de imagen y sonido de nivel galáctico,
+                cada transmisión te sumergirá aún más en el universo de Star Wars.
+              </p>
+            </div>
+          </div>
+          <div class="card card3" style="width: 18rem">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Comunidad de Fanáticos:</h5>
+              <p class="card-text">
+                Únete a una comunidad vibrante de fanáticos de Star Wars.
+                Comparte teorías, participa en discusiones y encuentra compañeros de aventuras 
+                que comparten tu amor por la saga.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section3 section-advertising">
+        <div class="container-logo">
+          <img src="/assets/img/aboutUs/starwarslogo.png" alt="Warner Logo" />
+          <img
+            src="/assets/img/aboutUs/lucaslogo.png"
+            alt="Universal Logo"
+          />
+          <img
+            src="/assets/img/aboutUs/thxlogo.png"
+            alt="DreamWorks Logo"
+          />
+          <img
+            src="/assets/img/aboutUs/disneylogo.png"
+            alt="Paramount Logo"
+          />
+          <img src="/assets/img/aboutUs/foxlogo.png" alt="Fox Logo" />
+        </div>
+        <!-- 
+            <h1>Sobre Filmópolis: conócenos</h1>
+            <p>
+            En Filmopolis, nos enorgullece contar con un equipo de desarrollo apasionado y dedicado que trabaja incansablemente para llevar la magia del cine directamente a tus dispositivos. 
+            No solo creamos una plataforma de streaming, creamos una comunidad cinéfila donde la pasión por el cine se encuentra con la excelencia técnica. <b>CONÓCENOS UN POCO MÁS...</b>
+          </p> -->
+      </section>
+      <section class="section4 business-cards">
+        <h2>¡Conoce a Nuestro Equipo de Desarrollo!</h2>
+        <div class="container-business-cards1">
+          <div class="card card-business" id="card1-business" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Joaquina Girbaut</h5>
+              <h6 class="card-subtitle"><b>Scrum Master</b></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="social-icons-business">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+          <div class="card card-business" id="card2-business" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nicolás Pinto</h5>
+              <h6 class="card-subtitle"><b>Developer</b></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="social-icons-business">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+          <div class="card card-business" id="card3-business" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Luis Aragón</h5>
+              <h6 class="card-subtitle"><b>Developer</b></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="social-icons-business">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-business-cards2">
+          <div class="card card-business" id="card4-business" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Alfredo Cruz</h5>
+              <h6 class="card-subtitle"><b>Developer</b></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="social-icons-business">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+          <div class="card card-business" id="card5-business" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Lucas Vivanco</h5>
+              <h6 class="card-subtitle"><b>Developer</b></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="social-icons-business">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="social-networks">
+        <div class="box">
+          <a href="/index.html">
+            <img
+              class="logo-footer"
+              src="/assets/img/homepage/filmopolis_logo2.png"
+              alt="Logo footer"
+            />
+          </a>
+          <li class="footer-link">
+            <a href="/html/acerca-de.html">Acerca de</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">Contacto</a>
+          </li>
+        </div>
+        <div class="social-icons">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
+      <div class="group-2">
+        <small>
+          &copy; 2024 <b>FLDSMDFR</b> - Todos los Derechos Reservados.</small
+        >
+      </div>
+    </footer>
+    <script src="../scripts/Navbar/script-login.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

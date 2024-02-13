@@ -1,29 +1,61 @@
 /************NAVIGATOR************/
-nav{
-    background-color: #DB242A;
+
+.navbar {  
+    background-color: #0a141d;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    width: 100%;
 }
-.navbar-collapse{
+
+.container-navbar{
+    width: 100%;
+    display: flex;
+}
+
+#isotipo{
+    margin-left: 2%;
+}
+#login-container{
     display: flex;
     justify-content: end;
 }
-.nav-link{
-    margin-right:20px;
-    border-radius: 5px;
-}
-.nav-link:hover{
-    background-color: #fff;
-}
-.navbar-logo{
-    width: 70px;
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
-}
-.navbar-logo:hover{
-    transform: scale(1.2); /* Cambia el tamaño de la imagen al 120%*/
+
+#login{
+    height: 40px;
 }
 
+#logout{
+    color: #a83d3d;
+}
+
+.inicio-sesion{
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 90%;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item{
+    margin-left: 5px;
+}
+
+#isotipo {
+    margin-top: 0.3%;
+    display: block;
+}
+
+/* Consulta de medios: Pantallas pequeñas (hasta 600px) */
+@media screen and (max-width: 990px) {
+    #isotipo {
+        display: none;
+    }
+}
 
 /************FOOTER************/
 .footer{

@@ -8,6 +8,7 @@ body{
 
 .section1{
    min-height: 400px;
+   margin-bottom: 30px;
 }
 
 .section1-bg-init {
@@ -43,6 +44,17 @@ body{
 
 
 /************MAIN************/
+
+/** SEARCH INPUT **/
+.container-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-search, input{
+    margin-left: 20px;
+}
+
 
 /***SECTION 2***/
 h2{

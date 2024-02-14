@@ -26,7 +26,7 @@ body {
     margin: 2vw;
     padding: 20px;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: #ffffff98;
     overflow: hidden;
 }
 
@@ -35,15 +35,50 @@ body {
     border: none;   
 }
 
-#tablaContainer #agregar{
+#miTabla td:nth-child(1),
+#miTabla td:nth-child(5){
+    width: 10px;
+    text-align: center;
+}
+
+#miTabla td:nth-child(2),
+#miTabla td:nth-child(3){
+    width: 250px;
+}
+
+#miTabla td:nth-child(6), #miTabla th:nth-child(6) {
+  text-align: center;
+  width: 150px;
+}
+
+#miTabla td:nth-child(4) {
+  max-width: 200px; /* Establece el ancho máximo deseado */
+  overflow: hidden; /* Oculta el texto que excede el ancho máximo */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto cortado */
+  white-space: nowrap; /* Evita que el texto se envuelva a la siguiente línea */
+}
+
+#tablaContainer #agregarFila{
     border: none;
     background-color: #2a51ed;
     color: white;
     padding: 8px 15px 8px 15px;
-    margin: 5px;
-    margin-top: 10px;
+    margin-right: 5px;
+    margin-top: 15px;
     border-radius: 15px;
   }
+
+#tablaContainer #guardar{
+    border: none;
+    background-color: #676767;
+    color: white;
+    padding: 8px 15px 8px 15px;
+    margin-right: 5px;
+    margin-top: 15px;
+    border-radius: 15px;
+    float: right;
+  }
+
 
 
 .modal {
@@ -63,7 +98,7 @@ body {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%;
   }
   
   .modal-btns {
@@ -74,6 +109,28 @@ body {
 
   .modal-btns #aceptar{
     border: none;
+    float: right;
+    background-color: #2a51ed;
+    color: white;
+    padding: 8px 15px 8px 15px;
+    margin: 5px;
+    margin-left: 15px;
+    border-radius: 15px;
+  }
+
+  #guardarEdicion{
+    border: none;
+    float: right;
+    background-color: #2a51ed;
+    color: white;
+    padding: 8px 15px 8px 15px;
+    margin: 5px;
+    margin-left: 15px;
+    border-radius: 15px;
+  }
+
+  .aceptar{
+    border: none;
     background-color: #2a51ed;
     color: white;
     padding: 8px 15px 8px 15px;
@@ -81,12 +138,14 @@ body {
     border-radius: 15px;
   }
 
-  .modal-btns #cancelar{
+  .cancelar{
     border: none;
+    float: left;
     background-color: #ed2a2a;
     color: white;
     padding: 8px 15px 8px 15px;
     margin: 5px;
+    margin-left: 15px;
     border-radius: 15px;
   }
 
@@ -98,15 +157,86 @@ body {
     background-color: #bebebe3d;
   }
 
-  .modal select{
-    margin: 10px;
+#container-categoria-modal {
+    position: relative;
+    display: inline-block;
+}
+
+#tablaContainer #agregarCategoria{
+    background-color: #bebebe3d;
     border: none;
     border-radius: 10px;
     padding: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+  }
+
+.borrarCategoria{
+    background-color: #ff00003d;
+    border: none;
+    height: 20px;
+    cursor: pointer; /* Cursor de apuntar */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+  .modal select{
     background-color: #bebebe3d;
+    margin: 10px;
+    width: calc(100% - 60px);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
   }
 
   .modal h4{
     margin-left: 12px;
   }
 
+  /* Estilos para el modal de categorías */
+#modalCategorias {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+}
+
+#modalCategorias .modal-content {
+  background-color: #fefefe; 
+  margin: 10% auto; 
+  padding: 20px;
+  border: 1px solid #888; 
+  border-radius: 10px; 
+  width: 50%; 
+}
+
+/* Estilos para la tabla */
+#modalCategorias table {
+  width: 95%; 
+  margin-left: 15px;
+  border-radius: 10px; 
+  border: 1px solid #ddd; 
+}
+
+/* Estilos para las celdas de la tabla */
+#modalCategorias table td {
+  padding: 8px; 
+  text-align: left;
+  border: 1px solid #ddd; 
+}
+
+#modalCategorias table td button {
+  display: block;
+  margin: auto;
+  margin-left: 7px;
+}
+
+#modalCategorias table td:nth-child(2) {
+  width: 50px; /* Ancho fijo en píxeles */
+}

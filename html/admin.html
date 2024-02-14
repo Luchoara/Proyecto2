@@ -51,7 +51,7 @@
       <h3>Administrar Peliculas</h3>
     <table id="miTabla" border="1">
         <tr>
-          <th>Número de Fila</th>
+          <th>#</th>
           <th>Película</th>
           <th>Categoría</th>
           <th>Sinopsis</th>
@@ -60,49 +60,76 @@
         </tr>
       </table>
       
-      <button id="agregar" onclick="abrirModalAgregar()">Agregar Fila</button>
-      
+      <div id="buttonContainer">
+      <button id="agregarFila" onclick="abrirModalAgregar()">Administrar</button>
+      <button id="guardar" onclick="botonGuardar()">Guardar Cambios</button>
+      <button id="guardar" onclick="abrirModalCategorias()">Categorias</button>
+      <button  onclick="imprimirTabla()">imprimir</button>    
+      </div>
+
       <!-- Modal de Agregar Fila -->
       <div id="modalAgregar" class="modal">
         <div class="modal-content">
           <h4>Agregar Pelicula</h4>
             <input type="text" id="inputPelicula" placeholder="Película">
-            <select id="selectCategoriaAgregar">
-              <option value="">Seleccionar categoría</option>
-              <option value="accion">Acción</option>
-              <option value="aventura">Aventura</option>
-              <option value="comedia">Comedia</option>
-              <option value="drama">Drama</option>
-              <option value="terror">Terror</option>
-            </select>
+            <div id="container-categoria-modal">
+              <select id="selectCategoriaAgregar"><option value="">Seleccionar categoría</option></select>
+              <button id="agregarCategoria" onclick="abrirModalAgregarCategoria()">+</button>
+            </div>
             <input type="text" id="inputSinopsis" placeholder="Sinopsis">
             <input type="file" id="inputImagen" accept="image/*" placeholder="Portada de la película">
             <div class="modal-btns">
-                <button id="aceptar" onclick="agregarFila()">Agregar</button>
-                <button id="cancelar" onclick="cerrarModalAgregar()">Cancelar</button>
+              <button class="cancelar" onclick="cerrarModalAgregar()">Cancelar</button>
+              <button id="aceptar" onclick="agregarFila()"> + Agregar</button>
             </div>
         </div>
       </div>
       
       <!-- Modal de Editar Fila -->
-      <div id="myModal" class="modal">
+      <div id="modalEditar" class="modal">
+        
         <div class="modal-content">
-          <input type="text" id="editInput1"> <!-- Película -->
-          <select id="selectCategoriaEditar">
-            <option value="">Seleccionar categoría</option>
-            <option value="Accion">Acción</option>
-            <option value="Aventura">Aventura</option>
-            <option value="Comedia">Comedia</option>
-            <option value="Drama">Drama</option>
-            <option value="Terror">Terror</option>
-          </select>
-          <input type="text" id="editInput3"> <!-- Sinopsis -->
+          <h4>Editar Pelicula</h4>
+            <input type="text" id="inputPelicula" placeholder="Película">
+            <div id="container-categoria-modal">
+              <select id="selectCategoriaAgregar"><option value="">Seleccionar categoría</option></select>
+              <button id="agregarCategoria" onclick="abrirModalAgregarCategoria()">+</button>
+            </div>
+            <input type="text" id="inputSinopsis" placeholder="Sinopsis">
+            <input type="file" id="inputImagen" accept="image/*" placeholder="Portada de la película">
+            <div class="modal-btns">
+              <button id="guardarEdicion" onclick="guardarEditarFila()">Guardar</button>
+              <button class="cancelar" onclick="cerrarModalEditar()">Cancelar</button>
+            </div>
+        </div>
+      </div>
+
+      <!-- Modal para agregar categorías -->
+      <div id="modalAgregarCategoria" class="modal">
+        <div class="modal-content" >
+          <h4>Agregar Categoría</h4>
+          <input type="text" id="inputCategoriaNueva" placeholder="Nombre de la categoría">
           <div class="modal-btns">
-            <button id="aceptar" onclick="guardarCambios()">Guardar</button>
-            <button id="cancelar" onclick="cerrarModal()">Cancelar</button>
+            <button id="btnAgregarCategoria" class="aceptar" onclick="agregarCategoria()">Agregar</button>
+            <button id="btnCancelarAgregarCategoria" class="cancelar" onclick="cerrarModalAgregarCategoria()">Cancelar</button>
           </div>
         </div>
       </div>
+
+      <!-- Modal para mostrar y eliminar categorías -->
+      <div id="modalCategorias" class="modal">
+        <div class="modal-content" id="modalContent">
+          <h4>Categorías</h4>
+          <div id="listaCategorias">
+
+          </div>
+          <div class="modal-btns">
+            <button id="btnCerrarModalCategorias" class="cancelar" onclick="cerrarModalCategorias()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+
+
       
     </div>
 

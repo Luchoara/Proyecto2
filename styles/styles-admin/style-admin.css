@@ -5,6 +5,7 @@ body {
 }
 
 #miTabla {
+  margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
     background-color: #ffffff; /* Fondo blanco */
@@ -48,14 +49,14 @@ body {
 
 #miTabla td:nth-child(6), #miTabla th:nth-child(6) {
   text-align: center;
-  width: 150px;
+  width: 200px;
 }
 
 #miTabla td:nth-child(4) {
-  max-width: 200px; /* Establece el ancho máximo deseado */
-  overflow: hidden; /* Oculta el texto que excede el ancho máximo */
+  max-width: 200px;
+  overflow: hidden; 
   text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto cortado */
-  white-space: nowrap; /* Evita que el texto se envuelva a la siguiente línea */
+  white-space: nowrap;
 }
 
 #tablaContainer #agregarFila{

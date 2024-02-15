@@ -1,0 +1,84 @@
+body{
+    background-color: #0D0D0D;
+}
+
+/********HEADER*********/
+
+/***SECTION 1***/
+
+.section1{
+   min-height: 400px;
+   margin-bottom: 30px;
+}
+
+.section1-bg-init {
+    background-image: url(/assets/img/homepage/info_peli.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container_init{
+    width: 50%;
+    height: 100%;
+    min-height: 400px;
+    align-items: end;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 400;
+}
+#text-init{
+    padding-top: 30px;
+    color: white;
+    width: 90%;
+    /* height: 100%; */
+}
+/* Estilo adicional para los elementos dentro de #text-init */
+#text-init > * {
+    margin-bottom: 20px; /* Espaciado inferior de 10 píxeles entre elementos */
+  }
+
+
+
+/************MAIN************/
+
+/** SEARCH INPUT **/
+.container-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-search, input{
+    margin-left: 20px;
+}
+
+
+/***SECTION 2***/
+h2{
+    color: #BFBFBF;
+}
+.sections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content{
+    width: 100%;
+    padding:30px;
+}
+
+hr{
+    border: solid 2px #DB242A;
+    width: 50%;
+
+}
+
+/***SECTION 5***/
+
+.section5-category{
+    margin-bottom: 100px;
+}

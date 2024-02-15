@@ -20,43 +20,53 @@
       v
     ></script>
   </head>
-  <header class="p-3 mb-3 border-bottom">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+  <body>
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+      <div class="container-navbar">
+        <a id="isotipo">
+          <img src="../assets/img/navbar/isotipo.png">
         </a>
-
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Inicio</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Peliculas</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Series</a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis">Mi Lista</a></li>
-        </ul>
-
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.worldfuturecouncil.org%2Fwp-content%2Fuploads%2F2020%2F06%2Fblank-profile-picture-973460_1280-1-705x705.png&f=1&nofb=1&ipt=c32d25770e7f656a5a9a8efe5063777f0da8593add3b2634e3c8046a24bcb5ff&ipo=image" 
-            alt="mdo" width="40" height="40" class="rounded-circle">
-          </a>
-          <ul class="dropdown-menu text-small">
-            
-            <li><a class="nav-link px-2 link-body-emphasis" href="#">Perfil</a></li>
-            <li><a class="nav-link px-2 link-body-emphasis" href="#">Cuenta</a></li>
-            <li><a class="nav-link px-2 link-body-emphasis" href="#">Configuracion</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="nav-link px-2 link-body-emphasis text-danger" href="#">Cerrar sesion</a></li>
+      <div class="container-fluid">
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <img src="../assets/img/navbar/isotipo.png">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item" id="inicio">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/error404.html">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/admin.html">Administrar</a>
+            </li>
           </ul>
         </div>
       </div>
-    </div>
-  </header>
-  <body>
-    
+  
+      <div class="container-fluid" id="login-container">
+        <button type="button" class="btn btn-primary" id="login" style="display: block;">Iniciar Sesion</button>
+        <div>
+          <div class="btn-group" id="dropdown" style="display: none;">
+            <button type="button" class="btn"><img src="../assets/img/navbar/avatar.png"></button>
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+            </button>  
+              <div class="dropdown">
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Perfil</a></li>
+                      <li><a class="dropdown-item" href="#">Mi lista</a></li>
+                      <li><a class="dropdown-item" href="#">Descargas</a></li>
+                      <li><a class="dropdown-item" href='#' id="logout"">Salir</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div> 
+      </div>
+  
+      </div>
+    </nav>
     <header>
       <section class="section1 section1-bg-init">
         <div class="container_init">
@@ -79,6 +89,12 @@
       </section>
     </header>
     <main>
+      <div class="container-search">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" id="search" onkeyup="filterCards()" placeholder="Escribe para buscar películas...">
+      </div>
+      <div class="search">
+      </div>
       <section class="sections section2-category">
         <div class="content">
           <h2>Originales</h2>
@@ -251,9 +267,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>El Imperio Contrataca</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/1.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/elimperiocontratacapc2.jpg" alt="El imperio Contrataca" />
                     </picture>
                   </a>
                 </div>
@@ -261,9 +277,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>El despertar de la Fuerza</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/2.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/eldespertardelafuerzapc2.jpg" alt="El despertar de la Fuerza" />
                     </picture>
                   </a>
                 </div>
@@ -271,9 +287,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>El Ataque de los Clones</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/3.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/elataquedelosclonespc2.jpg" alt="El Ataque de los Clones" />
                     </picture>
                   </a>
                 </div>
@@ -281,9 +297,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>El Regreso del Jedi</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/4.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/elregresodeljedipc2.jpg" alt="El Regreso del Jedi" />
                     </picture>
                   </a>
                 </div>
@@ -291,9 +307,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Han Solo</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/5.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/hansolopc2.jpg" alt="Han Solo" />
                     </picture>
                   </a>
                 </div>
@@ -301,9 +317,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>La Amenaza Fantasma</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/6.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/laamenazadafantasmapc2.jpg" alt="La Amenaza fantasma" />
                     </picture>
                   </a>
                 </div>
@@ -311,9 +327,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>La Venganza de los Sith</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/7.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/lavenganzadelossithpc2.jpg" alt="La Venganza de los Sith" />
                     </picture>
                   </a>
                 </div>
@@ -321,9 +337,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Los últimos Jedi</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/8.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/losultimosjedipc2.jpg" alt="Los últimos Jedi" />
                     </picture>
                   </a>
                 </div>
@@ -331,9 +347,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Rogue One</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/9.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/rogueonepc2.jpg" alt="Rogue One" />
                     </picture>
                   </a>
                 </div>
@@ -341,9 +357,19 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Una Nueva Esperanza</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/10.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/unanuevaesperanzapc2.jpg" alt="Una Nueva Esperanza" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>El Ascenso de SkyWalker</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/elascensodeskywalkerpc2.jpg" alt="El Ascenso de SkyWalker" />
                     </picture>
                   </a>
                 </div>
@@ -567,9 +593,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>La Amenaza Fantasma</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/1.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/laamenazadafantasmapc2.jpg" alt="La Amenaza Fantasma" />
                     </picture>
                   </a>
                 </div>
@@ -577,9 +603,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>El ataque de los clones</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/2.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/elataquedelosclonespc2.jpg" alt="El ataque de los clones" />
                     </picture>
                   </a>
                 </div>
@@ -587,9 +613,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Serie Animada</small>La Guerra de los Clones</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/3.jpg" alt="imagen" />
+                      <img src="./assets/img/img-carrousel/images/3.jpg" alt="La Guerra de los Clones" />
                     </picture>
                   </a>
                 </div>
@@ -597,9 +623,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>La Venganza de los Sith</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/4.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/lavenganzadelossithpc2.jpg" alt="La Venganza de los Sith" />
                     </picture>
                   </a>
                 </div>
@@ -607,9 +633,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Bad Batch</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/5.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel1pc/badbatchpc.jpeg" alt="Bad Batch" />
                     </picture>
                   </a>
                 </div>
@@ -617,9 +643,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Han Solo</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/6.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/hansolopc2.jpg" alt="Han Solo" />
                     </picture>
                   </a>
                 </div>
@@ -627,9 +653,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Obi-Wan Kenobi</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/7.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel1pc/obiwankenobipc2.jpg" alt="Obi-Wan Kenobi" />
                     </picture>
                   </a>
                 </div>
@@ -637,9 +663,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Serie Animada</small>Rebels</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/8.jpg" alt="imagen" />
+                      <img src="./assets/img/img-carrousel/images/8.jpg" alt="Rebels" />
                     </picture>
                   </a>
                 </div>
@@ -647,9 +673,9 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Serie</small>Andor</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/9.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel1pc/Andorpc2.jpg" alt="Andor" />
                     </picture>
                   </a>
                 </div>
@@ -657,13 +683,114 @@
               <div class="carrusel">
                 <div>
                   <a href="/">
-                    <h4><small>Imagen</small> Mas</h4>
+                    <h4><small>Pelicula</small>Rogue One</h4>
                     <picture>
-                      <img src="./assets/img/img-carrousel/images/10.jpg" alt="imagen" />
+                      <img src="./assets/img/homepage/carrousel2/rogueonepc2.jpg" alt="Rogue One" />
                     </picture>
                   </a>
                 </div>
               </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>Una Nueva Esperanza</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/unanuevaesperanzapc2.jpg" alt="Una Nueva Esperanza" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>El Imperio Contrataca</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/elimperiocontratacapc2.jpg" alt="El Imperio Contrataca" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>El Regreso del Jedi</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/elregresodeljedipc2.jpg" alt="El Regreso del Jedi" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Serie</small>Mandalorian</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel1pc/mandalorianpc2.jpg" alt="Mandalorian" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Serie</small>Boba Fett</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel1pc/bobafettpc2.jpg" alt="Boba Fett" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Serie</small>Ahsoka</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel1pc/ahsokapc2.jpg" alt="Ahsoka" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Serie Animada</small>La Resistencia</h4>
+                    <picture>
+                      <img src="./assets/img/img-carrousel/images/4.jpg" alt="La Resistencia" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>El Despertar de la Fuerza</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/eldespertardelafuerzapc2.jpg" alt="El Despertar de la Fuerza" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>Los últimos Jedi</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/losultimosjedipc2.jpg" alt="Los últimos Jedi" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+              <div class="carrusel">
+                <div>
+                  <a href="/">
+                    <h4><small>Pelicula</small>El Ascenso de SkyWalker</h4>
+                    <picture>
+                      <img src="./assets/img/homepage/carrousel2/elascensodeskywalkerpc2.jpg" alt="El Ascenso de SkyWalker" />
+                    </picture>
+                  </a>
+                </div>
+              </div>
+
             </div>
 
             <button
@@ -721,7 +848,12 @@
         >
       </div>
     </footer>
+    <!-- JS Carrusel -->
     <script src="/scripts/Homepage/script-carrusel.js"></script>
+    <!-- Búsqueda -->
+    <script src="./scripts/Homepage/script-busqueda.js"></script>
+    <!-- Navbar -->
+    <script src="./scripts/Navbar/script-login.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

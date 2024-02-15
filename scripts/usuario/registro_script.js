@@ -1,7 +1,7 @@
 registro = document.getElementById("registroForm")
 
 registro.addEventListener("submit", function(event) {
-  event.preventDefault(); // Evitar envío del formulario
+  event.preventDefault(); 
 
   // Obtener valores de entrada
   const nombre = document.getElementById("registroNombre").value;

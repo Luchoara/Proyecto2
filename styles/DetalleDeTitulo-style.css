@@ -5,7 +5,7 @@ body{
     background-image: url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7CDE2BF8D55E524A7920F6A149FB5A982A3905E7AEE12A63716BC3E45231220D/scale?width=1440&aspectRatio=1.78&format=jpeg);
     background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
+    
     color: white;
     
 }
@@ -45,7 +45,9 @@ body{
     font-size: 20px;
     letter-spacing: -.1px;
     line-height: 1.6;
-    display: block;
+    display: flex;
+    width: 60vw; /* 50% del ancho de la ventana gráfica */
+    height: 30vh
 }
 
 .caracteristicas-DP{
@@ -74,9 +76,54 @@ body{
 }
 .fondo-DP{
     background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
-    
+    background-size: cover;
+   
 }
 
 .alinear{
     margin-left: 50px;
+}
+
+.palaizq{
+    margin-left: -5px ;
+}
+
+
+@media (max-width: 768px) {
+    body{
+        background-size: 100%;
+        
+    }
+}
+
+.seleccionador button{
+    border: none;
+    background-color: transparent;
+    color: rgb(178, 178, 178);
+    transition: border-color 0.2s ease-in;
+    border-bottom: 2px solid transparent;
+    font-size: 20px;
+    margin:5px
+}
+
+.seleccionador button:hover{
+    border-bottom: 3px solid white;
+    border-radius: 2px;
+}
+.contenedores-sec{
+    position: relative;
+}
+
+
+.detalles-texto{
+    font-size: 22px;
+    line-height: 2
+}
+
+.detalles-titulo{
+    margin-bottom: 40px;
+}
+.hrmirey{
+    border: solid 2px #ffffff;
+    width: 50%;
 }

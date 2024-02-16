@@ -1,0 +1,82 @@
+
+
+body{
+    background-color: black;
+    background-image: url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7CDE2BF8D55E524A7920F6A149FB5A982A3905E7AEE12A63716BC3E45231220D/scale?width=1440&aspectRatio=1.78&format=jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    
+}
+
+.textoDetalle{
+    color: white;
+    text-decoration: none;
+    
+}
+.textoInformacion{
+    color: white;
+    text-decoration: none;
+    transform: scale(1);
+    transition: 0.2s ease-in;
+    filter: brightness(1);
+}
+
+.textoInformacion:hover{
+    transform: scale(1.02);
+}
+
+.titulo-DP{
+    
+    max-width: 341px;
+    min-width: 100px;;
+    width: 35vw;
+    padding-top: 56px;
+    padding-bottom: 16px;
+}
+
+.iconitos{
+    height: 20px;
+    margin-right: 4px;
+}
+ 
+.descripcion-DP{
+    font-size: 20px;
+    letter-spacing: -.1px;
+    line-height: 1.6;
+    display: block;
+}
+
+.caracteristicas-DP{
+    display: flex;
+    font-size: 15px;
+}
+
+.ver-ahora{
+    width: 150px;
+    height: 50px;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.ver-ahora:hover{
+    background-color: rgb(153, 152, 152);
+}
+.fondo-DP{
+    background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
+    
+}
+
+.alinear{
+    margin-left: 50px;
+}

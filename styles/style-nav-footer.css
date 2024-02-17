@@ -1,4 +1,9 @@
-/************NAVIGATOR************/
+@font-face {
+    font-family: StarWars;
+    src: url('../assets/font/Starjedi.ttf') format('truetype'); /* Ruta al archivo .ttf */
+  }
+
+/************NAVBAR************/
 
 .navbar {  
     background-color: #0b0b0b;
@@ -12,25 +17,11 @@
     display: flex;
 }
 
-#isotipo {
-    padding: 10px;
-}
-
-#isotipo-img{
-    width: 100px;
-}
-
-#login-container{
-    display: flex;
-    justify-content: end;
-}
-
-#login{
-    height: 40px;
-}
 
 #logout{
-    color: #a83d3d;
+    font-weight: bold;
+    background-color:#0b0b0b;
+    color:#fff23e;
 }
 
 .inicio-sesion{
@@ -51,19 +42,110 @@
     margin-left: 5px;
 }
 
+.nav-link{
+    font-family: 'StarWars';
+    font-size: large;
+}
+
 .nav-link:hover{
     color: #fff23e;
 }
 
+
+.isotipo-img{
+    width: 100px;
+}
+
 #isotipo {
+    padding: 10px;
     margin-top: 0.3%;
     display: block;
+}
+
+#login-container{
+    display: flex;
+    justify-content: end;
+}
+
+.btn {
+    font-family: 'StarWars';
+    font-size: medium;
+    margin-right: 10px;
+    margin-top: 15px;
+    height: 40px;
+}
+
+#btn-avatar{
+    background-color:#ffffff00;
+    border: none;
+}
+
+#img-avatar{
+    margin-top: 13px;
+    width: 38px;
+}
+
+#login{
+    border-color:#fff23e;
+}
+
+#registrar {
+    color: #0b0b0b;
+    background-color: #fff23e;
+}
+
+#toggle-btn {
+    background-color: #fff23e;
+    color:#0b0b0b;
+}
+
+.dropdown{
+    position: relative;
+    top: 5px;
+    right: 80px;
+}
+
+.dropdown-menu{
+    border-color: #fff23e;
+    background-color: #0b0b0b;
+}
+
+.dropdown-item{
+    color: #fff23e;
 }
 
 /* Consulta de medios: Pantallas pequeñas (hasta 600px) */
 @media screen and (max-width: 990px) {
     #isotipo {
         display: none;
+    }
+
+    #img-avatar{
+        margin-top: 20px;
+        width: 38px;
+    }
+
+    .navbar-toggler{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        font-family: 'StarWars';
+        font-size: medium;
+        margin-right: 10px;
+        margin-top: 20px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .btn {
+        font-family: 'StarWars';
+        font-size: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+        height: 40px;
     }
 }
 

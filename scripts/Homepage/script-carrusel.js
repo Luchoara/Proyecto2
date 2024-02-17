@@ -18,7 +18,7 @@ function App() {}
 
         track.style.left == "" ? leftPosition = track.style.left = 0 : leftPosition = parseFloat(track.style.left.slice(0,-2) * -1);
         
-        btn.dataset.button == "button-prev" ? prevAction(leftPosition, carruselWidth, track) : nextAction(leftPosition, trackWidth, listWidth, carruselWidth, track);
+        btn.dataset.button == "button-prev" ? prevAction(leftPosition,carruselWidth, track) : nextAction(leftPosition,trackWidth, listWidth, carruselWidth, track);
 
     }
 
@@ -29,7 +29,7 @@ function App() {}
         }
     }
 
-    let nextAction = (leftPosition, trackWidth, carruselWidth, listWidth, track) => {
+    let nextAction = (leftPosition, trackWidth, listWidth, carruselWidth, track) => {
         if(leftPosition < (trackWidth - listWidth)){
 
             track.style.left = `${-1 * (leftPosition + carruselWidth)}px`;

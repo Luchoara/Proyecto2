@@ -21,13 +21,10 @@ a{
 .carousel{
     width: 100%;
     margin: 0px 0px;
+    display: flex;
+    justify-content: center;
 }
 
-@media(max-width:768px) {
-    .carousel{
-        margin: 0px 60px;
-    }
-}
 
 .carousel h2{
     font-size: 45px;
@@ -109,7 +106,6 @@ a{
 /*BOTONES*/
 .carrusel-arrow{
     border-radius: 30px;
-    background-color: #fff;
     position: absolute;
     z-index: 4;
     width: 48px;
@@ -119,6 +115,9 @@ a{
     cursor: pointer;
 }
 
+.carrusel-arrow:hover{
+    background-color: white;
+}
 .carrusel-arrow:focus{
     outline:0;
 }

@@ -1,5 +1,5 @@
 body{
-    background-color: #0D0D0D;
+    background-color: black;
 }
 
 /********HEADER*********/
@@ -8,7 +8,7 @@ body{
 
 .section1{
    min-height: 400px;
-   margin-bottom: 30px;
+   margin: 30px 0px;
 }
 
 .section1-bg-init {
@@ -24,9 +24,7 @@ body{
     min-height: 400px;
     align-items: end;
     background-color:rgba(0, 0, 0, 0.623);
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
+    padding: 25px 25px 25px 20px;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-weight: 400;
     transition: 0.3s ease-in;
@@ -47,24 +45,126 @@ body{
 /* Estilo adicional para los elementos dentro de #text-init */
 #text-init > * {
     margin-bottom: 20px; /* Espaciado inferior de 10 píxeles entre elementos */
-  }
+}
 
+.text-init,p{
+    margin-top: 30px;
+}
+/* Botón pelicula destacada */
+:root {
+    --accent: #FADE4B;
+}
+.init-button {
+    box-shadow: 0 0 0 0 var(--accent);
+    outline: 2px solid;
+    color: white;
+    outline-color: white;
+    outline-offset: 0;
+    text-shadow: none;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    max-width: 160px;
+    width: 50%;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    transition: all 550ms cubic-bezier(
+        .36, .63, .5, .73
+    );
+    margin: 20px 0px;
+}
+
+.init-button:hover {
+    box-shadow: 0 0 0 2px var(
+        --accent
+    );
+    outline-color: rgba(
+        255, 255, 255, 0
+    );
+    outline-offset: 15px;
+    color: var(--accent);
+}
 
 
 /************MAIN************/
 
 /** SEARCH INPUT **/
-.container-search{
+
+.search-content{
+    display: flex;
+    justify-content: center;
+}
+
+.container-search {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: min-content;
+	padding: 10px;
 }
-.container-search, input{
-    margin-left: 20px;
+
+input {
+	height: 30px;
+	width: 200px;
+	color: #000;
+	font-size: 20px;
+	border: 1px solid #48494a;
+}
+
+input {
+    box-shadow: 0 0 0 0 var(--accent);
+    outline: 2px solid;
+    outline-color: white;
+    outline-offset: 0;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+    position: relative;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    transition: all 550ms cubic-bezier(
+        .36, .63, .5, .73
+    );
+}
+
+input:hover {
+    box-shadow: 0 0 0 2px var(
+        --accent
+    );
+    outline-color: rgba(
+        255, 255, 255, 0
+    );
+    outline-offset: 15px;
+    
+}
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 40px;
+	height:40px;
+	background: #48494a;
+	line-height: 80px;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+}
+
+.btn-search i {
+	font-size: 20px;
+	color: white;
+	line-height: 80px;
 }
 
 
-/***SECTION 2***/
+/***SECTION 2: Categorías***/
 h2{
     color: #BFBFBF;
 }
@@ -79,11 +179,35 @@ h2{
     padding:30px;
 }
 
-hr{
-    border: solid 2px #DB242A;
-    width: 50%;
-
+.content-1{
+    margin-top: 30px;
 }
+
+/* Divisores de Categoría iluminados */
+
+.illuminated-buttons-container {
+    display: flex;
+    margin: 20px 0;
+    
+}
+.button {
+    height: 3px;
+    background-color: white;
+    border-radius: 10%;
+    margin: 0 5px;
+    animation: blink-animation 4s infinite;
+    box-shadow: 0 0 5px 2.5px rgba(226, 224, 220, 0.5); /* Luz difuminada en el borde */
+}
+.button1{
+    width: 30px;
+}
+.button2{
+    width: 150px;
+}
+/* hr{
+    border: solid 1.5px #48494a;
+    width: 70%;
+} */
 
 /***SECTION 5***/
 

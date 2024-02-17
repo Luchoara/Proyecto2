@@ -6,6 +6,12 @@ searchInput.addEventListener("input", function() {
   // Obtener el valor del input de búsqueda
   var searchText = searchInput.value.trim().toLowerCase();
 
+  // Obtener el contenedor de búsqueda
+  var searchContainer = document.querySelector(".search");
+
+  // Limpiar el contenido del contenedor de búsqueda
+  searchContainer.innerHTML = "";
+
   // Verificar si hay texto en el input
   if (searchText.length > 0) {
     // Definir la función para filtrar las tarjetas
@@ -21,12 +27,11 @@ searchInput.addEventListener("input", function() {
         carousel.style.display = "none";
       });
 
-      // Obtener el div de búsqueda
-      var searchDiv = document.querySelector(".search");
-      // Mostrar el div de búsqueda
-      searchDiv.style.display = "block";
-      // Limpiar el contenido previo de la búsqueda
-      searchDiv.innerHTML = "";
+      // Mostrar el contenedor de búsqueda
+      searchContainer.style.display = "block";
+
+      // Conjunto para almacenar títulos únicos de tarjetas
+      var uniqueTitles = new Set();
 
       // Obtener todas las tarjetas del carrusel
       var cards = document.querySelectorAll(".carrusel");
@@ -34,10 +39,13 @@ searchInput.addEventListener("input", function() {
       // Iterar sobre cada tarjeta y mostrar u ocultar según la coincidencia de búsqueda
       cards.forEach(function(card) {
         var title = card.querySelector("h4").innerText.toLowerCase();
-        if (title.includes(searchText)) {
-          // Clonar la tarjeta coincidente y agregarla al div de búsqueda
+        // Verificar si el título ya está en el conjunto de títulos únicos
+        if (!uniqueTitles.has(title) && title.includes(searchText)) {
+          // Agregar el título al conjunto de títulos únicos
+          uniqueTitles.add(title);
+          // Clonar la tarjeta coincidente y agregarla al contenedor de búsqueda
           var clonedCard = card.cloneNode(true);
-          searchDiv.appendChild(clonedCard);
+          searchContainer.appendChild(clonedCard);
         }
       });
     }
@@ -56,8 +64,7 @@ searchInput.addEventListener("input", function() {
       carousel.style.display = "block";
     });
 
-    // Ocultar el div de búsqueda
-    var searchDiv = document.querySelector(".search");
-    searchDiv.style.display = "none";
+    // Ocultar el contenedor de búsqueda
+    searchContainer.style.display = "none";
   }
 });

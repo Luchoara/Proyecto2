@@ -1,7 +1,7 @@
 /************NAVIGATOR************/
 
 .navbar {  
-    background-color: #0a141d;
+    background-color: #0b0b0b;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -12,12 +12,12 @@
     display: flex;
 }
 
-#isotipo{
-    margin-left: 2%;
+#isotipo {
+    padding: 10px;
 }
 
-#navbarSupportedContent{
-
+#isotipo-img{
+    width: 100px;
 }
 
 #login-container{
@@ -47,7 +47,12 @@
 }
 
 .nav-item{
+    margin-top: 15px;
     margin-left: 5px;
+}
+
+.nav-link:hover{
+    color: #fff23e;
 }
 
 #isotipo {

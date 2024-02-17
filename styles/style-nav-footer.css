@@ -1,0 +1,382 @@
+@font-face {
+    font-family: StarWars;
+    src: url('../assets/font/Starjedi.ttf') format('truetype'); /* Ruta al archivo .ttf */
+  }
+
+/************NAVBAR************/
+
+.navbar {  
+    background-color: #0b0b0b;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.container-navbar{
+    width: 100%;
+    display: flex;
+}
+
+
+#logout{
+    font-weight: bold;
+    background-color:#0b0b0b;
+    color:#fff23e;
+}
+
+.inicio-sesion{
+    height: auto;
+    width: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 90%;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item{
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.nav-link{
+    font-family: 'StarWars';
+    font-size: large;
+}
+
+.nav-link:hover{
+    color: #fff23e;
+}
+
+
+.isotipo-img{
+    width: 100px;
+}
+
+#isotipo {
+    padding: 10px;
+    margin-top: 0.3%;
+    display: block;
+}
+
+#login-container{
+    display: flex;
+    justify-content: end;
+}
+
+.btn {
+    font-family: 'StarWars';
+    font-size: medium;
+    margin-right: 10px;
+    margin-top: 15px;
+    height: 40px;
+}
+
+#btn-avatar{
+    background-color:#ffffff00;
+    border: none;
+}
+
+#img-avatar{
+    margin-top: 13px;
+    width: 38px;
+}
+
+#login{
+    border-color:#fff23e;
+}
+
+#registrar {
+    color: #0b0b0b;
+    background-color: #fff23e;
+}
+
+#toggle-btn {
+    background-color: #fff23e;
+    color:#0b0b0b;
+}
+
+.dropdown{
+    position: relative;
+    top: 5px;
+    right: 80px;
+}
+
+.dropdown-menu{
+    border-color: #fff23e;
+    background-color: #0b0b0b;
+}
+
+.dropdown-item{
+    color: #fff23e;
+}
+
+/* Consulta de medios: Pantallas pequeñas (hasta 600px) */
+@media screen and (max-width: 990px) {
+    #isotipo {
+        display: none;
+    }
+
+    #img-avatar{
+        margin-top: 20px;
+        width: 38px;
+    }
+
+    .navbar-toggler{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+    }
+
+    .btn {
+        font-family: 'StarWars';
+        font-size: medium;
+        margin-right: 10px;
+        margin-top: 20px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .btn {
+        font-family: 'StarWars';
+        font-size: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+        height: 40px;
+    }
+}
+
+/************FOOTER************/
+.footer{
+    width: 100%;
+    background-color:#0b0b0b;
+}
+.social-networks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box{
+    width: 30%;
+    text-align: end;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.logo-footer{
+    width: 200px;
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+.logo-footer:hover{
+    transform: scale(1.2); /* Cambia el tamaño de la imagen al 120%*/
+}
+
+.box{
+    display: flex;
+    margin-left: 50px;
+    width: auto;
+}
+
+#link-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 0px 30px;
+    justify-content: flex-end;
+}
+
+.footer-link{
+    list-style: none;
+}
+.footer-link a{
+    font-family: 'StarWars';
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    text-align: left;
+}
+.footer-link a:hover{
+    color:#fff23e;
+}
+.social-icons {
+    text-align: right;
+    margin: 0 30px;
+    background-color: #00000000;
+}
+
+.social-icons img{
+    margin: 5px;
+    background-color: #00000000;
+    width: 35px;
+}
+
+
+.footer .group-2{
+    background-color:#000000;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width:800px){
+     .social-networks{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    .box{
+        text-align: center;
+        width: 100%;
+    }
+    .social-icons{
+        text-align: center;
+    }
+}
+
+.group-2 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/************LIGHTSABER************/
+
+ /* change the color */
+  
+ #green:checked ~ .lightsaber {
+    --blade-hue: 120;
+  }
+  
+  #blue:checked ~ .lightsaber {
+    --blade-hue: 195;
+  }
+  
+  #yellow:checked ~ .lightsaber {
+    --blade-hue: 60;
+  }
+  
+  #purple:checked ~ .lightsaber {
+    --blade-hue: 290;
+  }
+  
+  #red:checked ~ .lightsaber {
+    --blade-hue: 360;
+  }
+  
+  #darksaber:checked ~ .lightsaber {
+    --blade-lightness: 100%;
+  }
+
+:root {
+    
+    --blade-hue: 195;
+    --blade-lightness: 50%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /* The color pickers */
+  
+  [name="color"] {
+    grid-row: 1 / 2;
+    align-self: end;
+    margin: 0.5em;
+  }
+  
+  label:not(.hilt) {
+    color: white;
+    font-weight: bold;
+    align-self: start;
+  }
+  
+  /* Lightsaber styling */
+  
+  .lightsaber {
+    position: relative;
+    display: flex;
+  }
+  
+  .blade {
+    position: absolute;
+    background: white;
+    height: 20%;
+    width: 100%;
+    bottom: 100%;
+    border-radius: 0 50vw 50vw 0;
+    box-shadow: inset 0 0 4px
+        hsl(var(--blade-hue) 100% var(--blade-lightness) / 1),
+      0 0 1em hsl(var(--blade-hue) 100% var(--blade-lightness) / 0.8),
+      0 0 1.5em hsl(var(--blade-hue) 100% var(--blade-lightness) / 0.7),
+      0 0 2em hsl(var(--blade-hue) 100% var(--blade-lightness) / 0.5),
+      0 0 3em hsl(var(--blade-hue) 100% var(--blade-lightness) / 0.3),
+      0 0 5em hsl(var(--blade-hue) 100% var(--blade-lightness) / 0.2);
+  
+    transition: transform 250ms ease-out;
+    transform-origin:left;
+  }
+
+  #blade-acercade{
+    left: 110px;
+    top: 12px;
+  }
+
+  #blade-contacto{
+    left: 100px;
+    top: 12px;
+  }
+  
+  .blade::after {
+    content: "";
+    background: hsl(var(--blade-hue) 100% var(--blade-lightness));
+    border-radius: inherit;
+    filter: blur(0.5em);
+    opacity: 1;
+    animation: pulse linear 5s infinite;
+  }
+  
+  .blade::before {
+    content: "";
+    background: white;
+    border-radius: inherit;
+    z-index: 10;
+  }
+  
+  @keyframes pulse {
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  /* Turn lightsaber on and off */
+  
+  #on-off:not(:hover) + .blade {
+    transform: scaleX(0);
+  }
+  
+  #on-off:hover + .blade {
+    transform: scaleX(1);
+  }
+  
+  #darksaber:checked ~ .lightsaber .blade {
+    border-radius: 100% / 500px 10px 0 0;
+  }
+  
+  #darksaber:checked ~ .lightsaber .blade::before {
+    background: black;
+  }
+  
+  /* play sound */
+  
+  embed {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    pointer-events: 0;
+    width: 0;
+    height: 0;
+  }

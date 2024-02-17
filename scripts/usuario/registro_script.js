@@ -4,12 +4,12 @@ registro.addEventListener("submit", function(event) {
   event.preventDefault(); 
 
   // Obtener valores de entrada
-  const nombre = document.getElementById("registroNombre").value;
-  const apellido = document.getElementById("registroApellido").value;
-  const nombreUsuario = document.getElementById("registroUsuario").value;
-  const email = document.getElementById("registroEmail").value;
-  const password = document.getElementById("registroPassword").value;
-  const confirmPassword = document.getElementById("confirmarPassword").value;
+  let nombre = document.getElementById("registroNombre").value;
+  let apellido = document.getElementById("registroApellido").value;
+  let nombreUsuario = document.getElementById("registroUsuario").value;
+  let email = document.getElementById("registroEmail").value;
+  let password = document.getElementById("registroPassword").value;
+  let confirmPassword = document.getElementById("confirmarPassword").value;
 
   // Validar
   if (!validateForm(nombre, apellido, nombreUsuario, email, password, confirmPassword)) {
@@ -49,7 +49,6 @@ function validateForm(nombre, apellido, nombreUsuario, email, password, confirmP
 
   // COMENTADO PARA TESTING, DESCOMENTAR ANTES DE FINALIZAR Y AGREGAR EL 'REQUIRED', "MAXLENGHT" MINLENGHT" EN EL HTML
 
- 
   let patronPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-+]).{8,}$/;
   
   

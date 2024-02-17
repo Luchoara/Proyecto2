@@ -1,45 +1,42 @@
-///** FALTA LINK EN BODY DE EMAIL PARA "resetPass.html" */
+///** ALGO ESTA MAL!!!
+resetPass = document.getElementById("resetPassForm");
 
+resetPass.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-forgotPass =	document.getElementById("forgotPass")
+    let nombreUsuario = document.getElementById("nombreUsuario").value;
+    let nuevoPassword = document.getElementById('nuevoPassword').value;
+    let confirmarPassword = document.getElementById("confirmarPassword").value;
 
-forgotPass.addEventListener("submit", function (event) {
+    // AQUI
+    let usuarioName = localStorage.getItem(nombreUsuario);
 
-			event.preventDefault();
+  // AQUI
+    if (nombreUsuario === usuarioName) {
+  // Verificar si la nueva contraseña cumple con tus criterios de seguridad
+      if (isValidPassword(nuevoPassword)) {
 
-			const resetPassUsuario = document.getElementById("to_name").value;
-			const resetEmail = document.getElementById("to_email").value;
+        if (nuevoPassword === usuario.password) {
+        // Obtener el usuario actual desde localStorage
+          console.log("user seleccionado")
+          // Actualizar la contraseña del usuario
+          nuevoPassword = usuario.password;
+          console.log("nuevo pass letteado")
 
-			const userData = localStorage.getItem(resetPassUsuario)
-			const userDataDec = JSON.parse(userData)
-			
-			console.log(userDataDec)
-
-			if (userDataDec) {
-				// userData = JSON.parse(userData);
-
-				if (resetEmail === userDataDec.email || resetPassUsuario === userDataDec.nombreUsuario) {
-					//* envio por email el link
-
-					const serviceID = 'default_service';
-					const templateID = 'template_zaxhkf9';
-					const parametros = {
-						to_email: userDataDec.email,
-						to_name: userDataDec.nombreUsuario,
-					}
-
-					emailjs.send(serviceID, templateID, parametros, this)
-						.then(() => {
-								alert("¡Envio exitoso!. Revise su correo");
-						}, (err) => {
-								alert(JSON.stringify(err));
-						});
-				} else {
-					alert("Error, algo salio mal");
-				}
-			} else {
-				alert("El usuario no existe. Por favor, regístrate.");
-			}		
+          // Guardar el usuario actualizado en localStorage
+          localStorage.setItem('password', JSON.stringify(nuevoPassword));
+          console.log("usuario pass modificado")
+        }
+        alert('¡Contraseña modificada correctamente!');
+      } else {
+        alert('La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula, una letra minúscula y un número.');
+      }
+    }
 });
 
-
+// validar
+function isValidPassword(password) {
+  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-+]{8,}$/;
+  console.log("contraseña validada")
+  return regex.test(password);
+}

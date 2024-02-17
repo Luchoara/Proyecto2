@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {  
+  
+    var titulo = document.getElementById("jamonsito").textContent.toLowerCase();
+    var body = document.body;
+
+    if (titulo.includes("kamino")) {
+        body.style.backgroundImage = "url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7CDE2BF8D55E524A7920F6A149FB5A982A3905E7AEE12A63716BC3E45231220D/scale?width=1440&aspectRatio=1.78&format=jpeg')";
+    } else if (titulo.includes("ahsoka")) {
+        body.style.backgroundImage = "url('https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/BA50406B852FB305AFFB1D27A3C2E5899DDDC8CC2FB2BA30C78995E82465E9D9/scale?width=1440&aspectRatio=1.78&format=jpeg')";
+    } else {
+      backgroundImage = "none"
+    }
+
+
+ 
+
+
 window.addEventListener('scroll', function() {
     var section = document.querySelector('.fondo-DP');
     var scrollPosition = window.scrollY;
@@ -14,11 +30,10 @@ window.addEventListener('scroll', function() {
     section.style.backgroundImage = 'radial-gradient(farthest-side at 73% 21%, rgba(0, 0, 0, ' + opacity + '), rgb(26, 29, 41))';
   });
 
- 
-  
   var botones = document.querySelectorAll('.seleccionador button');
   var contenedoresSec = document.getElementById("contenedores-sec");
-  var botonesTemporada = document.querySelectorAll(".temporadas-seleccionador")
+  
+  
 
     botones.forEach(function(boton) {
         boton.addEventListener("click", function() {
@@ -35,6 +50,8 @@ window.addEventListener('scroll', function() {
 
             //Ve que botón que le haces click
             if (boton.id === "temporadas") {
+              
+
                 crearTemporadas();
                crearTemporadasBotones();
                limpiarTemporadas()
@@ -43,24 +60,9 @@ window.addEventListener('scroll', function() {
                 crearSugerencias();
             } else if (boton.id === "detalles") {
               limpiarBotones()
-                           
-            var urlBadBatch = 'https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7C0252A420A4A069C16B6825AD59C340FFC17B9F3B5B9F2C5D67B6DCD3D52492/scale?width=1440&aspectRatio=1.78&format=png';
-            var imagenes = document.querySelectorAll('img');
-            var encontradaBadBatch = false;
-
-            imagenes.forEach(function(img) {
-                if (img.src === urlBadBatch) {
-                    encontradaBadBatch = true;
-                    mostrarDescripcionBadBatch();
-                }
-            });
-
-            // Si la URL de Bad Batch no está, mostrar la descripción de Ahsoka
-            if (!encontradaBadBatch) {
-                mostrarDescripcionAhsoka();
+              mostrarDescripcionBadBatch();
             }
             function mostrarDescripcionBadBatch() {
-              
               var detallesHTML = `
                   <div id="detalles_contenedor">
                       <h3 class="detalles-titulo">Star-Wars: The Bad Batch</h3>
@@ -68,22 +70,8 @@ window.addEventListener('scroll', function() {
                   </div>`;
               
               contenedoresSec.innerHTML = detallesHTML;
-          }
-          
-          // Función para mostrar la descripción de Ahsoka
-          function mostrarDescripcionAhsoka() {
-              var detallesHTML = `
-                  <div id="detalles_contenedor">
-                      <h3 class="detalles-titulo"><b>Ahsoka</b></h3>
-                      <p class="detalles-texto">Descripción de la serie Ahsoka.</p>
-                  </div>`;
-              
-              contenedoresSec.innerHTML = detallesHTML;
-          }
-        
-
-            }
-        });
+          }     
+            });
     });
 
 
@@ -355,7 +343,9 @@ window.addEventListener('scroll', function() {
   } else if (botonTemp.id === "temporada-2") {
       mostrarTemporada2()
       limpiarContenedorSec()
-  }
+  }else if (botonTemp.id === "temporada-3") {
+    mostrarTemporada3()
+    limpiarContenedorSec()}
 
     function mostrarTemporada1(){
       var temporada1HTML = `
@@ -506,6 +496,10 @@ window.addEventListener('scroll', function() {
       temporadasContenedor.innerHTML = temporada2HTML
     }
 
+    function mostrarTemporada3(){
+      var temporada3HTML =`TEMPORADA 3`
+      temporadasContenedor.innerHTML = temporada3HTML;
+    }
     })
 });
 function limpiarContenedorSec() {
@@ -524,3 +518,16 @@ function limpiarBotones() {
   botones_aqui.style.opacity = "0"
   botones_aqui.style.marginLeft = "-300px"
 } 
+
+/*function temporadita3() {
+  var temporadita3boton = document.getElementById("temporadita-3");
+  temporadita3boton.style.opacity = "1"
+  temporadita3boton.style.marginLeft = "0px"
+} 
+
+function temporadita3limpiar(){
+  var temporadita3boton = document.getElementById("temporada-3");
+  temporadita3boton.style.opacity = "0"
+  temporadita3boton.style.marginLeft = "-300px"
+}
+*/

@@ -2,10 +2,8 @@
 
 body{
     background-color: #1a1d29;
-    background-image: url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/7CDE2BF8D55E524A7920F6A149FB5A982A3905E7AEE12A63716BC3E45231220D/scale?width=1440&aspectRatio=1.78&format=jpeg);
     background-size: 100%;
     background-repeat: no-repeat;
-    
     color: white;
     
 }
@@ -92,6 +90,7 @@ body{
 
 
 
+
 .seleccionador button{
     border: none;
     background-color: transparent;
@@ -105,9 +104,6 @@ body{
 .seleccionador button:hover{
     border-bottom: 3px solid white;
     border-radius: 2px;
-}
-.contenedores-sec{
-    position: relative;
 }
 
 
@@ -156,7 +152,7 @@ body{
     border-radius: 2px;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1240px) {
     body{
         background-size: 100%;
         
@@ -185,5 +181,11 @@ body{
 
     #detalles{opacity: 0;}
 
+    .titulo-DP{
+        margin-bottom: 30%;
+    }
+    .alinear{
+        margin-right: 15px;
+    }
 }
 

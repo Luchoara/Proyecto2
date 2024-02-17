@@ -11,10 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
       backgroundImage = "none"
     }
 
-
- 
-
-
 window.addEventListener('scroll', function() {
     var section = document.querySelector('.fondo-DP');
     var scrollPosition = window.scrollY;
@@ -33,8 +29,6 @@ window.addEventListener('scroll', function() {
   var botones = document.querySelectorAll('.seleccionador button');
   var contenedoresSec = document.getElementById("contenedores-sec");
   
-  
-
     botones.forEach(function(boton) {
         boton.addEventListener("click", function() {
             // Restablecer el estilo de todos los botones pa que sean grises (no seleccionados)

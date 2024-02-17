@@ -31,6 +31,7 @@ registro.addEventListener("submit", function(event) {
 
  // test ELIMINAR
   alert("Registro exitoso. Por favor, inicia sesión.");
+  location.replace("/html/usuario/login.html");
 
 // test ELIMINAR
   console.log(usuario)
@@ -49,7 +50,7 @@ function validateForm(nombre, apellido, nombreUsuario, email, password, confirmP
   // COMENTADO PARA TESTING, DESCOMENTAR ANTES DE FINALIZAR Y AGREGAR EL 'REQUIRED', "MAXLENGHT" MINLENGHT" EN EL HTML
 
  
-  let patronPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+  let patronPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-+]).{8,}$/;
   
   
   if (!patronPassword.test(password)) {

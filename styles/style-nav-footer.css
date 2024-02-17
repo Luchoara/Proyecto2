@@ -273,12 +273,7 @@
     --blade-hue: 195;
     --blade-lightness: 50%;
   }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+
   
   /* The color pickers */
   

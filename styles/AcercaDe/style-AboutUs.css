@@ -22,7 +22,7 @@ a{
 
 .section-welcome{
     display: flex;
-    padding: 50px 0px 90px 0px;
+    padding: 30px 0px 40px 0px;
     background-color: black;
     color:#fff;
     margin: 30px;
@@ -69,6 +69,33 @@ a{
     display: flex;
     justify-content: center;
     margin-top: 50px;
+}
+.card-info{
+    background-color:#0d0d0d;
+    color: white;
+}
+
+.card-info{
+    object-fit: cover;
+    border-radius:15px;
+    
+    transition: .3s ease-in-out;
+    box-sizing: border-box;
+    padding: 5px;
+    
+    
+}
+.card-info:hover{
+    border: 2px solid #ffffff;
+    transition: border 0.1s ease;
+    filter:brightness(1);
+}
+
+
+
+
+.card img{
+    height: 200px;
 }
 .card1, .card2, .card3{
     margin: 20px;
@@ -121,6 +148,14 @@ a{
     background-color:black;
     color: #fff;
 }
+.section4 h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.business-cards{
+    text-align: center;
+}
 .container-business-cards1{
     display: flex;
     justify-content: center;
@@ -132,8 +167,48 @@ a{
     margin: 0, 50px, 50px, 50px;
 }
 .card-business{
-    margin: 20px;
+    margin: 20px; /*original*/
+    border-color: #0d0d0d;
 }
+
+.card-business::before,
+.card-business::after {
+  content: '';
+  position: absolute;
+  height: 10px; /* Altura del borde */
+  background-color: white; /* Color del borde */
+}
+
+.card-business::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px; /* Coloca el borde arriba del contenedor */
+  width: 60%;
+  height: 10px; /* Altura del borde */
+  background-color: #0d0d0d;
+  border-radius: 0px 0px 0px 10px;
+  clip-path: polygon(0 0, 100% 0%, 95% 100%, 0 100%);
+}
+
+.card-business::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -10px; /* Coloca el borde abajo del contenedor */
+  width: 30%;
+  height: 10px; /* Altura del borde */
+  /* clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 49% 100%); */
+  background-color: #0d0d0d;
+  border-radius: 0 0px 10px 10px;
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 60% 100%);
+}
+
+.card-body-business{
+    color: white;
+    background-color: #0d0d0d;
+}
+
 
 @media screen and (max-width:1000px){
     .container-business-cards1, .container-business-cards2{
@@ -141,8 +216,41 @@ a{
         align-items: center;
     }
 }
+.img-business{
+    height: 250px;
+}
+/*Iconos card*/
+.fa:hover{
+    color: white;
+    animation: blink-animation 4s infinite;
+    text-shadow: 0 0 5px 2.5px rgba(226, 224, 220, 0.5); /* Luz difuminada en el borde */
+}
 
+/*Botones Iluminados*/
+.illuminated-buttons-container {
+    display: flex;
+    margin: 10px 0;
+    
+}
+.button {
+    height: 3px;
+    background-color: white;
+    border-radius: 10%;
+    margin: 0 5px; 
+    
+}
+.button1{
+    width: 30px;
+    border-radius: 20px;
+}
+.button2{
+    border-radius: 20px;
+    width: 8px;
+}
 
-
-
-
+.card-business:hover{
+    .button{
+        animation: blink-animation 4s infinite;
+        box-shadow: 0 0 5px 2.5px rgba(226, 224, 220, 0.5); /* Luz difuminada en el borde */
+    }
+}

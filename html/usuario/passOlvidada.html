@@ -5,17 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Password olvidado</title>
   <!-- styles -->
-  <link rel="stylesheet" href="/styles/usuario/user_styles.css">
+  <link rel="stylesheet" href="/styles/usuario/style-forgotpass.css">
 </head>
 <body class="bg-body">
-  <h1>Así que te olvidaste tu contraseña??</h1>
   
-  <section class="contenedoor">
+  
+  <section class="contenedor">
     <div class="form-content">
-      <div><h2>Solicitud de contraseña</h2></div>
-      <div><h5>Recibe la solicitud para <br> recuperar tu contraseña</h5></div> 
+      <div id="texto-yoda">
+        <h2>Rellenar los campos debes</h2>
+        <h5>Para tu contraseña cambiar<br>llenar los campos debes<br> un mail recibiras</h5> 
+      </div>
       <form class="forgotPass" id="forgotPass" method="post">
         <div class="form-floating">
+          <div class="lightsaber">
           <input
             type="text"
             class="form-control"
@@ -24,10 +27,11 @@
             minlength="4"
             maxlength="10"
             required
-          />
-          <label for="to_name" class="form-label"></label>
+          /><div class="blade" id="blade-formulario"></div>
+          </div><label for="to_name" class="form-label"></label>
         </div>
         <div class="form-floating">
+          <div class="lightsaber">
           <input
             type="text"
             class="form-control"
@@ -36,8 +40,8 @@
             minlength="4"
             maxlength="30"
             required
-          />
-          <label for="to_email" class="form-label"></label>
+          /><div class="blade" id="blade-formulario"></div>
+          </div><label for="to_email" class="form-label"></label>
         </div>
         <div class="b-send col-12">
           <button class="btn btn-primary botonL" type="submit" id="button" value="Send Email">

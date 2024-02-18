@@ -3,14 +3,9 @@
     src: url('/assets/font/Starjedi.ttf') format('truetype'); /* Ruta al archivo .ttf */
   }
 
-header{
-    display: flex;
-    margin: 10px 10px;
-}
-
-
 .bg-body{
     background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+    display: flex;
 }
 
 /* contenedor del formulario */
@@ -20,7 +15,36 @@ header{
     height: 98vh;
     display: flex;
     align-items: center;
+}
 
+#texto-yoda{
+    display: flex;
+    flex-direction: column;
+    color: #fff23e;
+    font-size: 20px;
+    width: 35vw;
+    font-family: sans-serif;
+    font-family: 'StarWars';
+    align-self: flex-start;
+    letter-spacing: 3px;
+}
+
+.image-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50vw; /* Ancho igual al ancho de la ventana */
+    height: 80vh; /* Altura del 80% de la ventana */
+    overflow: hidden;
+    perspective: 1000px;
+ }
+
+  .image-container img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    display: block; /* Asegura que no haya espacio adicional debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    transform: translateZ(5px);
 }
 
 
@@ -30,7 +54,6 @@ header{
     height: 100%;
     padding: 0px 0px 0px 50px;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     border: solid;
     background-color: #0b0b0b;
@@ -38,25 +61,20 @@ header{
     
 }
 
-
-/* titulo del formulario */
-.form-heather{
-    display: flex;
-    color: #fff23e;
-    font-size: 30px;
-    width: 35vw;
-    font-family: sans-serif;
-    font-family: 'StarWars';
-    align-self: flex-start;
-    letter-spacing: 3px;
-
-
+#texto-yoda h2{
+    letter-spacing: 2px; 
+    margin-bottom: 0;
 }
+
+#texto-yoda h5{
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
 /* Boton del formulario */
 .b-send{
     display: flex;
     margin: 10px;
-    justify-content: center;
     
 }
 
@@ -66,16 +84,16 @@ header{
 
 .form-control{
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     border: none;
     font-size: large;
     color: white;
-    background-color: #0b0b0b00;
+    background-color: #00000000;
     
 }
 
 #form-buttons{
-    width: 35vw;
+    width: 20vw;
     display: flex;
     flex-direction: row;
     padding: 0;
@@ -84,18 +102,7 @@ header{
 
 .b-send{
     margin: 0;
-    margin-right: 25px;
-}
-
-#registroForm{
-    position: relative;
-    text-decoration: none;
-    color: white;
-    margin-top: 20px;
-}
-
-#registroForm:hover{
-    color: #fff23e;
+    margin-right: 7px;
 }
 
 .botonL{
@@ -103,11 +110,9 @@ header{
     border: none;
     background: rgba(0, 0, 0, 0);
     cursor: pointer;
-    font-size: 15px;
-    margin-left: 0px;
     font-family: 'StarWars';
-    font-size: large;
-    text-align: left;
+    font-size: 30px;
+    padding-left: 0;
 }
 
 .botonL:hover{
@@ -170,7 +175,7 @@ header{
     position: absolute;
     background: white;
     height: 10%;
-    width: 100%;
+    width: 80%;
     bottom: 100%;
     border-radius: 0 50vw 50vw 0;
     box-shadow: inset 0 0 4px

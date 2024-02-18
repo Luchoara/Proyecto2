@@ -115,15 +115,20 @@
     </section>
 
     <div class="image-container">
-    <img src="/assets/img/starwars/R2D2.png" id="r2d2" onclick="playAudio()">
+    <img src="/assets/img/starwars/R2D2.png" id="r2d2" onmouseover="playHoverSound()">
     <audio id="r2d2audio" src="/assets/audio/r2d2-scream.mp3"></audio>
+    <audio id="hoverAudio1" src="/assets/audio/r2d21.mp3"></audio>
+    <audio id="hoverAudio2" src="/assets/audio/r2d22.mp3"></audio>
+    <audio id="hoverAudio3" src="/assets/audio/r2d23.mp3"></audio>
+    <audio id="hoverAudio4" src="/assets/audio/r2d24.mp3"></audio>
+    <audio id="hoverAudio5" src="/assets/audio/r2d25.mp3"></audio>
+    <audio id="hoverAudio6" src="/assets/audio/r2d26.mp3"></audio>
     <script>
-      function playAudio() {
-        var r2d2 = document.getElementById('r2d2');
-        var audio = document.getElementById("r2d2audio");
-        r2d2.style.transition = "transform 2.5s ease";
-        r2d2.style.transform = "translateZ(-15000px) translateY(6400px) rotateX(1800deg)"; 
-        audio.play();
+
+      function playHoverSound() {
+        var randomIndex = Math.floor(Math.random() * 6) + 1; // Genera un número aleatorio entre 1 y 3
+        var hoverAudio = document.getElementById("hoverAudio" + randomIndex);
+        hoverAudio.play();
       }
 
     </script>

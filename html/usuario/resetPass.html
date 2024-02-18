@@ -10,36 +10,45 @@
 
 <body class="bg-body">
   
-  <section class="contenedoor">
+  <section class="contenedor">
     <div class="form-content">
       <div class="form-heather"><h4>Reiniciar contraseña</h4></div> 
       <form class="resetPassForm" id="resetPassForm" method="post">
         <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="nombreUsuario"
-            placeholder="Usuario"
-            minlength="4"
-            maxlength="10"
-            required
-          />
+          <div class="lightsaber">
+              <input
+                type="text"
+                class="form-control"
+                id="nombreUsuario"
+                placeholder="Usuario"
+                minlength="4"
+                maxlength="10"
+                required
+              ></input>
+          <div class="blade" id="blade-formulario"></div>
+        </div>
           <label for="nombreUsuario" class="form-label"></label>
         </div>
         <div class="form-floating">
-            
-          <input
+  
+          <div class="lightsaber">
+            <input
             type="password"
             class="form-control"
             id="nuevoPassword"
             placeholder="Nueva contraseña"
             minlength="7"
             maxlength="15"
-            required
-          />
-          <label for="nuevoPassword" class="form-label"></label>
+            required/>
+            <div class="blade" id="blade-formulario"></div>
+          </div>
+
+          <label for="nuevoPassword" class="form-label" id="on-off"></label>
+          
         </div>
         <div class="form-floating">
+
+          <div class="lightsaber">
           <input
             type="password"
             class="form-control"
@@ -49,15 +58,18 @@
             maxlength="15"
             required
           />
+          <div class="blade" id="blade-formulario"></div>
+        </div>
+
           <label for="confirmarPassword" class="form-label" data-pwd="pwd1"></label>
         </div>
-        <div class="b-send col-12">
-          <button class="btn btn-primary botonL" type="submit">
-            Confirmar
-          </button>
-        </div>
-        <div class="b-send col-12">
-          <a href="../html/registro.html" id="registroForm">Crear una cuenta</a>
+        <div id="form-buttons">
+            <div class="b-send col-12">
+              <button class="btn btn-primary botonL" type="submit">Confirmar</button>
+            </div>
+            <div class="b-send col-12">
+              <a href="../html/registro.html" id="registroForm">Crear una cuenta</a>
+            </div>
         </div>
       </form>
     </div>

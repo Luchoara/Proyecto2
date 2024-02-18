@@ -1,31 +1,27 @@
 ///** ALGO ESTA MAL!!!
 let resetPass = document.getElementById("resetPassForm");
+let usuarioFormulario = document.getElementById("UsuarioResetPass").value;
+let nuevoPass = document.getElementById("nuevoPassword").value;
+let confirmarPass = document.getElementById("confirmarPassword").value;
+
+//* comparar el nombre del usuarioForm con el nombre de usuario db almacenado en una variable
+let usuarioDB = JSON.parse(localStorage.getItem(usuarioFormulario));
+
 
 resetPass.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-
-  // AQUI
+    event.preventDefault(event);
     // El nombre del usuario ingresado coincide con el de la db
-    if (usuarioBD.nombreUsuario === usuarioForm) {
-
+    if (usuarioDB) {
   // Verificar si la nueva contraseña cumple con tus criterios de seguridad
-      if (isValidPassword(nuevoPassword)) {
-    
+      if (isValidPassword(nuevoPass)) {
         // Si los nuevos password coinciden
-        if (nuevoPassword === confirmarPassword) {
-          //*CHECKPOINT
-          console.log("user seleccionado")
-
+        if (nuevoPass === confirmarPass) {
           // Actualiza la contraseña del usuario
-          nuevoPassword = usuario.password;
-
+          nuevoPass = usuarioDB.password;
           //*CHECKPOINT
-          console.log("nuevo pass letteado")
-
+          console.log("nuevo pass seteado")
           // Guardar el usuario actualizado en localStorage
-          localStorage.setItem('password', JSON.stringify(nuevoPassword));
-
+          localStorage.setItem('password', JSON.stringify(nuevoPass));
           //*CHECKPOINT
           console.log("usuario pass modificado")
         }

@@ -51,3 +51,6 @@ function sesionIniciada (e){
 		alert("Algo falló")
 	}
 }
+
+/*Resetear Pass */
+

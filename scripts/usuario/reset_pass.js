@@ -12,23 +12,23 @@ resetPass.addEventListener("submit", function (event) {
     event.preventDefault(event);
     // El nombre del usuario ingresado coincide con el de la db
     if (usuarioDB) {
+      //*CHECKPOINT
+      console.log("checkpoint 2")
   // Verificar si la nueva contraseña cumple con tus criterios de seguridad
-      if (isValidPassword(nuevoPass)) {
-        // Si los nuevos password coinciden
-        if (nuevoPass === confirmarPass) {
-          // Actualiza la contraseña del usuario
-          nuevoPass = usuarioDB.password;
-          //*CHECKPOINT
-          console.log("nuevo pass seteado")
-          // Guardar el usuario actualizado en localStorage
-          localStorage.setItem('password', JSON.stringify(nuevoPass));
-          //*CHECKPOINT
-          console.log("usuario pass modificado")
+      if (!isValidPassword(nuevoPass)) {
+         //*CHECKPOINT
+        console.log("checkpoint 3")
+        if(nuevoPass === confirmarPass){
+            // Actualiza la contraseña del usuario
+            nuevoPass = usuarioDB.password;
+            //*CHECKPOINT
+            console.log("nuevo pass seteado")
+            // Guardar el usuario actualizado en localStorage
+            localStorage.setItem('password', JSON.stringify(nuevoPass));
+            //*CHECKPOINT
+            console.log(usuarioDB.password)
         }
-        alert('¡Contraseña modificada correctamente!');
-      } else {
-        alert('La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula, una letra minúscula y un número.');
-      }
+      } 
     }
 });
 
@@ -36,15 +36,18 @@ resetPass.addEventListener("submit", function (event) {
 function isValidPassword() {
 
   let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-+]{8,}$/;
+  console.log("contraseña validada")
+  regex.test(nuevoPass)  
+}
+  
 
-  //* Validar los dos passwords
-  if(confirmarPassword === nuevoPassword){
-    console.log("contraseña validada")
-    return regex.test(password);
+
+function passwordConfirm(nuevoPass, confirmarPass){
+  if(nuevoPass === confirmarPass){
+    alert('Las contraseñas coinciden')
+    return true
   }
   else {
-    alert('Las contraseñas no coinciden')
+      alert('Las contraseñas no coinciden')
   }
-};
-
-
+}

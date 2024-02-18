@@ -6,13 +6,13 @@ registro.addEventListener("submit", function(event) {
   // Obtener valores de entrada
   let nombre = document.getElementById("registroNombre").value;
   let apellido = document.getElementById("registroApellido").value;
-  let nombreUsuario = document.getElementById("registroUsuario").value;
+  let usuarioAlias = document.getElementById("registroUsuario").value;
   let email = document.getElementById("registroEmail").value;
   let password = document.getElementById("registroPassword").value;
   let confirmPassword = document.getElementById("confirmarPassword").value;
 
   // Validar
-  if (!validateForm(nombre, apellido, nombreUsuario, email, password, confirmPassword)) {
+  if (!validateForm(nombre, apellido, usuarioAlias, email, password, confirmPassword)) {
       return; 
   }
   console.log(validateForm)
@@ -21,17 +21,18 @@ registro.addEventListener("submit", function(event) {
   const usuario = {
       nombre: nombre,
       apellido: apellido,
-      nombreUsuario: nombreUsuario,
+      usuarioAlias: usuarioAlias,
       email:email,
       password: password
   };
 
 
-  localStorage.setItem(nombreUsuario, JSON.stringify(usuario));
+  localStorage.setItem(usuarioAlias, JSON.stringify(usuario));
 
  // test ELIMINAR
-  console.log(nombreUsuario);
-  alert("Registro exitoso. Por favor, inicia sesión.");
+  console.log(usuario)
+  console.log(usuarioAlias);
+  alert("Registro exitoso. Redirigiendo, inicia sesión.");
   location.replace("/html/usuario/login.html");
 
 // test ELIMINAR

@@ -1,35 +1,41 @@
 /* Enviar email para recuperar Pass */
 
 let formularioReset = document.getElementById("forgotPass");
-let usuarioFormulario = document.getElementById("to_name").value;
-let emailFormulario = document.getElementById("to_email").value;
+let usuarioFormulario = document.getElementById("usuarioFP").value;
+let emailFormulario = document.getElementById("emailFP").value;
 
 //* comparar el nombre del usuarioForm con el nombre de usuario db almacenado en una variable
-let usuarioDB = localStorage.getItem(usuarioFormulario);
+let usuarioDB = JSON.parse(localStorage.getItem(usuarioFormulario));
+// let emailDB = JSON.parse(localStorage.getItem(emailFormulario));
+
+let btn = document.getElementById('button');
 
 //* listener para el formulario
 formularioReset.addEventListener("submit", function (e) {
-  console.log(usuarioFormulario);
-  //* console.log(usuarioDB);
-  //* Si el usuario esta en la db entonces...
+	e.preventDefault();
+
+	//* Si el usuario esta en la db entonces...
 	if (usuarioDB) {
-
-    //* CHECKPOINT
-		alert("usuario db: "+usuarioDB);
-
-		if (resetEmail === usuarioDB.email) {
+		//* Si los emails coinciden...
+		if (emailFormulario === usuarioDB.email) {
+			
+		//* Parametros para el envio del email
+		const serviceID = 'service_tvkcc19';
+		const templateID = 'template_zaxhkf9';
+		let parametrosEmail = {
+			to_name: usuarioFormulario,
+			to_email: emailFormulario,
+		}
+		
+		emailjs.send(serviceID, templateID, parametrosEmail)
+    .then(() => {
+      btn.value = 'Send Email';
 			//* CHECKPOINT
-			alert("¡Envio exitoso!");
-
-			// enviar un link para resetear el password usando smtpjs
-			//* Salta la alerta pero no llega nunca el email
-			Email.send({
-				SecureToken: "6ebc8191-139d-434c-ad01-cc5a3a93f1a7",
-				To: usuarioDB.email,
-				From: "devStarWatch@gmail.com",
-				Subject: "Recuperar contraseña",
-				Body: "body del email",
-			}).then(alert(`mensaje enviado a: ${usuarioDB.email}`));
+      alert('Enviado, revisa tu casilla de correo!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
 		} else {
 			alert("Error, algo salio mal");
 		}

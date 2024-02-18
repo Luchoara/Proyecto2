@@ -30,6 +30,7 @@ registro.addEventListener("submit", function(event) {
   localStorage.setItem(nombreUsuario, JSON.stringify(usuario));
 
  // test ELIMINAR
+  console.log(nombreUsuario);
   alert("Registro exitoso. Por favor, inicia sesión.");
   location.replace("/html/usuario/login.html");
 

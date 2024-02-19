@@ -250,3 +250,22 @@
   .form-control:hover + .blade {
     transform: scaleX(1);
   }
+
+  @media (max-width: 1240px) {
+    body{
+      margin-right: 0px;
+    }
+    #r2d2{
+     
+      width: 1px;
+      height: 1px;
+    }
+    .contenedor{
+      width: 100%;
+      margin: 100px 0px 20px;
+      padding-bottom: 20px;
+    }
+    #forgotPass{
+      margin-left: 70px;
+    }
+  }

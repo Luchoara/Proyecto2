@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link href="../assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/contacto/contacto.css"/>
+    <title>Contacto</title>  
+  </head>
+  <body>
+    <div class="container">
+      <div class="illuminated-buttons-container">
+        <div class="buttons button1"></div>
+        <div class="buttons button2"></div>
+      </div>
+      <h1>Contactanos</h1>
+      <form id="contactForm" netlify>
+          <div class="form-group col-2 col-form-label">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" />
+          </div>
+        <div class="form-group col-2 col-form-label">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email"/>
+        </div>
+       <button type="submit" id="botonEnviar" class="btn btn-primary">
+          <b>ENVIAR</b>
+        </button>
+      </form>
+      <div id="errores" class="text-danger mt-3">
+        <!--aqui se mostraran los errores -->
+      </div> 
+    </div>
+
+    <!-- desde aqui hacia abajo esta el js del email -->
+
+
+    <!-- hasta aca esta el js del email  -->
+
+
+    <script src="../scripts/Contacto/contacto.js"></script>
+
+    <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+      emailjs.init('p5WpvjLUcNH4sWUWu')
+    </script>
+
+  </body>
+</html>

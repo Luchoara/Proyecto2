@@ -1,53 +1,70 @@
+
 ///** ALGO ESTA MAL!!!
-let resetPass = document.getElementById("resetPassForm");
+let resetPassForm = document.getElementById("resetPassForm");
 let usuarioFormulario = document.getElementById("UsuarioResetPass").value;
+
 let nuevoPass = document.getElementById("nuevoPassword").value;
 let confirmarPass = document.getElementById("confirmarPassword").value;
 
 //* comparar el nombre del usuarioForm con el nombre de usuario db almacenado en una variable
-let usuarioDB = JSON.parse(localStorage.getItem(usuarioFormulario));
+/* let usuarioDB = JSON.parse(localStorage.getItem(usuarioFormulario));
+let passDB = JSON.parse(localStorage.getItem(usuarioDB.password));
+*/
 
 
-resetPass.addEventListener("submit", function (event) {
-    event.preventDefault(event);
+//* Obtener los usuarios
+let contrasenaGral = JSON.parse(localStorage.getItem("password"));
+
+let usuarioExiste = JSON.parse(localStorage.getItem(usuarioFormulario));
+
+
+resetPassForm.addEventListener("submit", function (event) {
+    event.preventDefault();
     // El nombre del usuario ingresado coincide con el de la db
-    if (usuarioDB) {
+    if (usuarioExiste) {
       //*CHECKPOINT
       console.log("checkpoint 2")
-  // Verificar si la nueva contraseña cumple con tus criterios de seguridad
+      // Verificar si la nueva contraseña cumple con tus criterios de seguridad
       if (!isValidPassword(nuevoPass)) {
          //*CHECKPOINT
         console.log("checkpoint 3")
         if(nuevoPass === confirmarPass){
-            // Actualiza la contraseña del usuario
-            nuevoPass = usuarioDB.password;
-            //*CHECKPOINT
-            console.log("nuevo pass seteado")
-            // Guardar el usuario actualizado en localStorage
-            localStorage.setItem('password', JSON.stringify(nuevoPass));
-            //*CHECKPOINT
-            console.log(usuarioDB.password)
-        }
+          
+          modificarContrasenia(usuarioExiste, nuevoPass)
+          console.log(usuarioExiste.password)
+          
+        } 
+      }
+      else{
+        alert("checkpoint error 3")
       } 
     }
 });
 
 // validar todo
-function isValidPassword() {
+function isValidPassword(password) {
 
-  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-+]{8,}$/;
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-+]{8,}$/;
   console.log("contraseña validada")
-  regex.test(nuevoPass)  
+  return regex.test(password)  
 }
-  
 
 
-function passwordConfirm(nuevoPass, confirmarPass){
-  if(nuevoPass === confirmarPass){
-    alert('Las contraseñas coinciden')
-    return true
-  }
-  else {
-      alert('Las contraseñas no coinciden')
+// Función para modificar la contraseña de un usuario específico
+function modificarContrasenia(alias, nuevoPassword) {
+
+  let usuario = JSON.parse(localStorage.getItem(alias));
+
+	if (usuario) {
+		// Actualizar la contraseña del usuario
+		usuario.password = nuevoPassword;
+
+// ERROR!!! 
+		// Guardar el usuario actualizado en localStorage
+		localStorage.setItem(alias, JSON.stringify(usuario));
+		return alert('contraseña modificada correctamente'); // La contraseña se modificó correctamente
+  } else {
+      return alert('error al editar contraseña'); // No se encontró el usuario con el alias especificado
   }
 }
+

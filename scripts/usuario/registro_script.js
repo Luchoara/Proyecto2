@@ -15,10 +15,9 @@ registro.addEventListener("submit", function(event) {
   if (!validateForm(nombre, apellido, usuarioAlias, email, password, confirmPassword)) {
       return; 
   }
-  console.log(validateForm)
 
   // Crear objeto de usuario
-  const usuario = {
+  let usuario = {
       nombre: nombre,
       apellido: apellido,
       usuarioAlias: usuarioAlias,
@@ -26,25 +25,20 @@ registro.addEventListener("submit", function(event) {
       password: password
   };
 
+  guardarUsuario(usuario)
 
-  localStorage.setItem(usuarioAlias, JSON.stringify(usuario));
-
- // test ELIMINAR
-  console.log(usuario)
+  // test ELIMINAR
   console.log(usuarioAlias);
   alert("Registro exitoso. Redirigiendo, inicia sesión.");
   location.replace("/html/usuario/login.html");
-
-// test ELIMINAR
-  console.log(usuario)
 
   document.getElementById("registroForm").reset();
 });
 
 // Validacion
-function validateForm(nombre, apellido, nombreUsuario, email, password, confirmPassword) {
+function validateForm(nombre, apellido, usuarioAlias, email, password, confirmPassword) {
   
-  if (nombre.trim() === '' || apellido.trim() === '' || nombreUsuario.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+  if (nombre.trim() === '' || apellido.trim() === '' || usuarioAlias.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       alert("Por favor, completa todos los campos.");
       return false;
   }
@@ -66,4 +60,12 @@ function validateForm(nombre, apellido, nombreUsuario, email, password, confirmP
   }
 
   return true;
+}
+
+function guardarUsuario(usuario) {
+  // Generar una clave única para el usuario (por ejemplo, basada en su nombre de usuario)
+  let nuevoUsuario = usuario.usuarioAlias;
+
+  // Convertir el objeto de usuario a cadena JSON y guardarlo en localStorage
+  localStorage.setItem(nuevoUsuario, JSON.stringify(usuario));
 }

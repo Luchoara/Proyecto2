@@ -5,7 +5,7 @@
 
 .bg-body{
     background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
-    display: flex;
+    
 }
 
 /* contenedor del formulario */
@@ -20,7 +20,7 @@
 
 .image-container {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     right: 0;
     width: 50vw; /* Ancho igual al ancho de la ventana */
     height: 80vh; /* Altura del 80% de la ventana */
@@ -61,6 +61,7 @@
     font-family: sans-serif;
     font-family: 'StarWars';
     align-self: flex-start;
+    margin-bottom: 10px;
 }
 
 .form-heather h3{
@@ -87,16 +88,22 @@
     display: flex;
     margin-bottom: 15px;
     border: none;
-    font-size: large;
+    font-size: 20px;
     color: white;
     background-color: #00000000;
+    padding: 0;
+    margin-top: 10px;
+    width: 80%;
     
+}
+
+.form-label{
+  color: white;
+  background-color: #00000000;
 }
 
 #form-buttons{
     width: 20vw;
-    display: flex;
-    flex-direction: row;
     padding: 0;
     margin-top: 30px;
 }
@@ -112,6 +119,7 @@
     color: white;
     margin-top: 50px;
     margin-left: 10px;
+    width: 8vw;
 }
 
 #volverForm:hover, #forgotPass:hover{
@@ -127,6 +135,7 @@
     font-size: 20px;
     padding-left: 0;
     text-align: left;
+    width: 10vw;
 }
 
 .botonL:hover{
@@ -188,7 +197,7 @@
   .blade {
     position: absolute;
     background: white;
-    height: 10%;
+    height: 7%;
     width: 80%;
     bottom: 100%;
     border-radius: 0 50vw 50vw 0;
@@ -207,7 +216,7 @@
 
   #blade-formulario{
     left: 1px;
-    top: 25px;
+    top: 40px;
   }
   
   .blade::after {

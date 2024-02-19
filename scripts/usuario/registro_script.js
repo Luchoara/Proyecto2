@@ -28,6 +28,7 @@ registro.addEventListener("submit", function(event) {
   guardarUsuario(usuario)
 
   // test ELIMINAR
+  console.log(usuario)
   console.log(usuarioAlias);
   alert("Registro exitoso. Redirigiendo, inicia sesión.");
   location.replace("/html/usuario/login.html");

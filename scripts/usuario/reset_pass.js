@@ -13,7 +13,6 @@ let passDB = JSON.parse(localStorage.getItem(usuarioDB.password));
 
 
 //* Obtener los usuarios
-let contrasenaGral = JSON.parse(localStorage.getItem("password"));
 
 let usuarioExiste = JSON.parse(localStorage.getItem(usuarioFormulario));
 
@@ -31,7 +30,8 @@ resetPassForm.addEventListener("submit", function (event) {
         if(nuevoPass === confirmarPass){
           
           modificarContrasenia(usuarioExiste, nuevoPass)
-          console.log(usuarioExiste.password)
+          let checkFinal = JSON.parse(localStorage.getItem(usuarioExiste));
+          console.log(checkFinal)
           
         } 
       }
@@ -53,18 +53,16 @@ function isValidPassword(password) {
 // Función para modificar la contraseña de un usuario específico
 function modificarContrasenia(alias, nuevoPassword) {
 
-  let usuario = JSON.parse(localStorage.getItem(alias));
-
-	if (usuario) {
+	if (alias) {
 		// Actualizar la contraseña del usuario
-		usuario.password = nuevoPassword;
+		alias.password = nuevoPassword;
 
 // ERROR!!! 
 		// Guardar el usuario actualizado en localStorage
-		localStorage.setItem(alias, JSON.stringify(usuario));
+		localStorage.setItem(alias.password, JSON.stringify(alias));
 		return alert('contraseña modificada correctamente'); // La contraseña se modificó correctamente
   } else {
-      return alert('error al editar contraseña'); // No se encontró el usuario con el alias especificado
+    
+    return alert('error al editar contraseña'); // No se encontró el usuario con el alias especificado
   }
 }
-

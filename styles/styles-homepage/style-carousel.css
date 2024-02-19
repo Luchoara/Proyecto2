@@ -25,7 +25,7 @@ a{
 
 @media(max-width:768px) {
     .carousel{
-        margin: 0px 60px;
+        margin: 0px 0px;
     }
 }
 

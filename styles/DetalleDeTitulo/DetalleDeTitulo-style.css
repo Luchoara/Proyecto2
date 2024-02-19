@@ -187,13 +187,16 @@ body{
         margin-bottom: 30%;
     }
     .alinear{
-        margin-right: 15px;
+        
+        margin: 0px 15px 10px
     }
     /* #temporadas-aqui{
         margin-left: -130px ;
         position:relative;
     }*/
+    
 }     
+
 
 
 @media (min-width: 108px) {
@@ -204,5 +207,4 @@ body{
         width: 200px;
         height: 150px;
     }
-
 }

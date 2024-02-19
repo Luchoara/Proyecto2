@@ -1,0 +1,19 @@
+body{
+    background-image: url("http://untroubled.org/backgrounds/space/stars.gif");
+}
+
+.botonsitos{
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonton{
+    width: 300px;
+    height: 50px;
+    margin: 20px;
+}

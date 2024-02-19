@@ -3,12 +3,6 @@
     src: url('/assets/font/Starjedi.ttf') format('truetype'); /* Ruta al archivo .ttf */
   }
 
-header{
-    display: flex;
-    margin: 10px 10px;
-}
-
-
 .bg-body{
     background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
 }
@@ -43,15 +37,17 @@ header{
 .form-heather{
     display: flex;
     color: #fff23e;
-    font-size: 30px;
     width: 35vw;
     font-family: sans-serif;
     font-family: 'StarWars';
     align-self: flex-start;
-    letter-spacing: 3px;
-
-
+    letter-spacing: 2px;
 }
+
+.form-heather h4{
+  font-size: 35px;
+}
+
 /* Boton del formulario */
 .b-send{
     display: flex;
@@ -68,9 +64,12 @@ header{
     display: flex;
     margin-bottom: 15px;
     border: none;
-    font-size: large;
+    font-size: 20px;
     color: white;
     background-color: #0b0b0b00;
+    padding: 0;
+    margin-top: 10px;
+    width: 80%;
     
 }
 
@@ -103,10 +102,10 @@ header{
     border: none;
     background: rgba(0, 0, 0, 0);
     cursor: pointer;
-    font-size: 15px;
+    font-size: 1.5vw;
     margin-left: 0px;
     font-family: 'StarWars';
-    font-size: large;
+    padding: 0;
     text-align: left;
 }
 
@@ -114,6 +113,10 @@ header{
     color: #fff23e;
     transform: scale(1.1);
     transition: 100ms;
+}
+
+.col-12{
+  width: 15vw;
 }
 
 /************LIGHTSABER************/
@@ -169,8 +172,8 @@ header{
   .blade {
     position: absolute;
     background: white;
-    height: 10%;
-    width: 100%;
+    height: 7%;
+    width: 80%;
     bottom: 100%;
     border-radius: 0 50vw 50vw 0;
     box-shadow: inset 0 0 4px
@@ -188,7 +191,7 @@ header{
 
   #blade-formulario{
     left: 1px;
-    top: 25px;
+    top: 40px;
   }
   
   .blade::after {

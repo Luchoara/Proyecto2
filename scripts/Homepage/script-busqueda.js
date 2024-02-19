@@ -1,16 +1,10 @@
-// Obtener el input de búsqueda
 var searchInput = document.getElementById("search");
 
-// Agregar un event listener para el evento input en el input de búsqueda
 searchInput.addEventListener("input", function() {
-  // Obtener el valor del input de búsqueda
   var searchText = searchInput.value.trim().toLowerCase();
 
-  // Verificar si hay texto en el input
   if (searchText.length > 0) {
-    // Definir la función para filtrar las tarjetas
     function filterCards() {
-      // Ocultar todas las secciones y carruseles
       var sections = document.querySelectorAll("main section");
       sections.forEach(function(section) {
         section.style.display = "none";
@@ -21,31 +15,41 @@ searchInput.addEventListener("input", function() {
         carousel.style.display = "none";
       });
 
-      // Obtener el div de búsqueda
       var searchDiv = document.querySelector(".search");
-      // Mostrar el div de búsqueda
       searchDiv.style.display = "block";
-      // Limpiar el contenido previo de la búsqueda
       searchDiv.innerHTML = "";
 
-      // Obtener todas las tarjetas del carrusel
+      // Objeto para almacenar los números asignados a cada título
+      var titleNumbers = {};
+
       var cards = document.querySelectorAll(".carrusel");
 
-      // Iterar sobre cada tarjeta y mostrar u ocultar según la coincidencia de búsqueda
       cards.forEach(function(card) {
         var title = card.querySelector("h4").innerText.toLowerCase();
-        if (title.includes(searchText)) {
-          // Clonar la tarjeta coincidente y agregarla al div de búsqueda
+        // Normalizar el título eliminando espacios y convirtiendo a minúsculas
+        var normalizedTitle = title.replace(/\s/g, '');
+
+        // Verificar si el título ya está en el objeto titleNumbers
+        if (titleNumbers[normalizedTitle] === undefined) {
+          // Si el título no está en el objeto, asignarle un nuevo número
+          titleNumbers[normalizedTitle] = Object.keys(titleNumbers).length + 1;
+        }
+
+        var cardNumber = titleNumbers[normalizedTitle];
+
+        // Verificar si el título ya se ha mostrado
+        if (!searchDiv.querySelector("[data-card-number='" + cardNumber + "']") && title.includes(searchText)) {
+          // Si el título no se ha mostrado y coincide con la búsqueda, agregar la tarjeta al div de búsqueda
           var clonedCard = card.cloneNode(true);
+          // Añadir el número de tarjeta como atributo personalizado
+          clonedCard.setAttribute("data-card-number", cardNumber);
           searchDiv.appendChild(clonedCard);
         }
       });
     }
 
-    // Llamar a la función de filtrado
     filterCards();
   } else {
-    // Si no hay texto en el input, mostrar todas las secciones y carruseles
     var sections = document.querySelectorAll("main section");
     sections.forEach(function(section) {
       section.style.display = "block";
@@ -56,7 +60,6 @@ searchInput.addEventListener("input", function() {
       carousel.style.display = "block";
     });
 
-    // Ocultar el div de búsqueda
     var searchDiv = document.querySelector(".search");
     searchDiv.style.display = "none";
   }

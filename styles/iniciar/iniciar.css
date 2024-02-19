@@ -15,6 +15,10 @@ a {
     color: #fff23e;
   }
 
+a:hover{
+    color: #0b0b0b;
+}
+
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -59,4 +63,5 @@ a {
 
 .botonton:hover{
     background-color: #fffc2e;
+    color: #0b0b0b;
 }

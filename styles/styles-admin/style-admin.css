@@ -9,6 +9,11 @@ body {
     background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
 }
 
+a {
+  text-decoration: none;
+  color: #fff23e;
+}
+
 #miTabla {
   margin-top: 20px;
     width: 100%;

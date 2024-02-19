@@ -10,10 +10,36 @@
     <link rel="stylesheet" href="/styles/iniciar/iniciar.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles/usuario/style-login.css" />
+
 <body>
+<div class="wrapper">
+<div id="logotipo">
+  <a id="reproducir"><img src="/assets/resources/logo-starwatch.png" style="width: 70vw;"></a>
+  <audio src="/assets/audio/sw-cantina.mp3" id="audiosw"></audio>
+</div>
+
 <div class="botonsitos">
-    <button type="button" class="btn btn-outline-warning botonton">Iniciar Sesión</button>
-    <button type="button" class="btn btn-outline-warning botonton">Registrarse</button>
+    <button type="button" class="btn btn-outline-warning botonton"><a href="/html/usuario/login.html">iniciar Sesión</a></button>
+    <button type="button" class="btn btn-outline-warning botonton"><a href="/html/usuario/registro.html">Registrarse</a></button>
+</div>
 </div>
 </body>
+
+<script>
+const reproducirBtn = document.getElementById('reproducir');
+const miAudio = document.getElementById('audiosw');
+
+// Agregar evento de clic al botón para reproducir el audio
+reproducirBtn.addEventListener('click', reproducirAudio);
+
+// Función para reproducir el audio
+function reproducirAudio() {
+  // Establecer el volumen al 20% (0.2)
+  miAudio.volume = 0.1;
+  // Reproducir el audio
+  miAudio.play();
+}
+
+</script>
+
 </html>

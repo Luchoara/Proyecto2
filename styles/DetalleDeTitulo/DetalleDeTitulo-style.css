@@ -152,6 +152,8 @@ body{
     border-radius: 2px;
 }
 
+
+
 @media (max-width: 1240px) {
     body{
         background-size: 100%;
@@ -187,5 +189,20 @@ body{
     .alinear{
         margin-right: 15px;
     }
-}
+    /* #temporadas-aqui{
+        margin-left: -130px ;
+        position:relative;
+    }*/
+}     
 
+
+@media (min-width: 108px) {
+    .carrusel{
+        width: 225px;
+    }
+    .carrusel a img {
+        width: 200px;
+        height: 150px;
+    }
+
+}

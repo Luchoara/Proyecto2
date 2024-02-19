@@ -1,71 +1,68 @@
+
 ///** ALGO ESTA MAL!!!
-resetPass = document.getElementById("resetPassForm");
+let resetPassForm = document.getElementById("resetPassForm");
+let usuarioFormulario = document.getElementById("UsuarioResetPass").value;
 
-resetPass.addEventListener("submit", function (event) {
+let nuevoPass = document.getElementById("nuevoPassword").value;
+let confirmarPass = document.getElementById("confirmarPassword").value;
+
+//* comparar el nombre del usuarioForm con el nombre de usuario db almacenado en una variable
+/* let usuarioDB = JSON.parse(localStorage.getItem(usuarioFormulario));
+let passDB = JSON.parse(localStorage.getItem(usuarioDB.password));
+*/
+
+
+//* Obtener los usuarios
+
+let usuarioExiste = JSON.parse(localStorage.getItem(usuarioFormulario));
+
+
+resetPassForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
-    let nombreUsuario = document.getElementById("nombreUsuario").value;
-    let nuevoPassword = document.getElementById('nuevoPassword').value;
-    let confirmarPassword = document.getElementById("confirmarPassword").value;
-
-    // AQUI
-    let usuarioName = localStorage.getItem(nombreUsuario);
-
-  // AQUI
-    if (nombreUsuario === usuarioName) {
-  // Verificar si la nueva contraseña cumple con tus criterios de seguridad
-      if (isValidPassword(nuevoPassword)) {
-
-        if (nuevoPassword === usuario.password) {
-        // Obtener el usuario actual desde localStorage
-          console.log("user seleccionado")
-          // Actualizar la contraseña del usuario
-          nuevoPassword = usuario.password;
-          console.log("nuevo pass letteado")
-
-          // Guardar el usuario actualizado en localStorage
-          localStorage.setItem('password', JSON.stringify(nuevoPassword));
-          console.log("usuario pass modificado")
-        }
-        alert('¡Contraseña modificada correctamente!');
-      } else {
-        alert('La contraseña debe tener al menos 8 caracteres y contener al menos una letra mayúscula, una letra minúscula y un número.');
+    // El nombre del usuario ingresado coincide con el de la db
+    if (usuarioExiste) {
+      //*CHECKPOINT
+      console.log("checkpoint 2")
+      // Verificar si la nueva contraseña cumple con tus criterios de seguridad
+      if (!isValidPassword(nuevoPass)) {
+         //*CHECKPOINT
+        console.log("checkpoint 3")
+        if(nuevoPass === confirmarPass){
+          
+          modificarContrasenia(usuarioExiste, nuevoPass)
+          let checkFinal = JSON.parse(localStorage.getItem(usuarioExiste));
+          console.log(checkFinal)
+          
+        } 
       }
+      else{
+        alert("checkpoint error 3")
+      } 
     }
 });
 
-// validar
+// validar todo
 function isValidPassword(password) {
-  let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-+]{8,}$/;
+
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d-+]{8,}$/;
   console.log("contraseña validada")
-  return regex.test(password);
+  return regex.test(password)  
 }
 
 
-/* Enviar email para recuperar Pass */
+// Función para modificar la contraseña de un usuario específico
+function modificarContrasenia(alias, nuevoPassword) {
 
-if (userDataDec) {
-				// userData = JSON.parse(userData);
+	if (alias) {
+		// Actualizar la contraseña del usuario
+		alias.password = nuevoPassword;
 
-				if (resetEmail === userDataDec.email || resetPassUsuario === userDataDec.nombreUsuario) {
-					
-					//* print para checkeo -- ELIMINAR --
-					alert("¡Envio exitoso!");
-				
-					// enviar un link para resetear el password usando smtpjs
-
-					//* Salta la alerta pero no llega nunca el email
-						Email.send({
-							SecureToken: "6ebc8191-139d-434c-ad01-cc5a3a93f1a7",
-							To : userDataDec.email,
-							From : "devStarWatch@gmail.com",
-							Subject : "Recuperar contraseña",
-							Body : 'body del email'
-						}).then(alert(`mensaje enviado a: ${userDataDec.email}`));
-
-				} else {
-					alert("Error, algo salio mal");
-				}
-			} else {
-				alert("El usuario no existe. Por favor, regístrate.");
-			}		
+// ERROR!!! 
+		// Guardar el usuario actualizado en localStorage
+		localStorage.setItem(alias.password, JSON.stringify(alias));
+		return alert('contraseña modificada correctamente'); // La contraseña se modificó correctamente
+  } else {
+    
+    return alert('error al editar contraseña'); // No se encontró el usuario con el alias especificado
+  }
+}

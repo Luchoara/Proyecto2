@@ -8,6 +8,7 @@ body{
     
 }
 
+
 .textoDetalle{
     color: white;
     text-decoration: none;
@@ -46,7 +47,8 @@ body{
     line-height: 1.6;
     display: flex;
     width: 50vw;
-    height: 20vh
+    height: 20vh;
+    color: white;
 }
 
 .caracteristicas-DP{

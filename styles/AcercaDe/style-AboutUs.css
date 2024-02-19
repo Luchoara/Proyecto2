@@ -1,3 +1,5 @@
+
+
 body{
     background-color: black;
 }
@@ -57,19 +59,42 @@ a{
 
 /*********SECTION CARDS***********/
 
+
+.card{
+    border: 0px;
+}
+
 .section-cards{
     justify-content: center;
     text-align: center;
     padding: 50px;
     margin-bottom: 50px;
     background-color: black;
-    color: #fff;
+    color: #ffffff;
 }
+
+.card-img-top{
+    background-color: black;
+}
+
 .container-cards{
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
+
+.card-text{
+    color: white;
+}
+
+.card-title{
+    color: #b90000;
+}
+
+.card-body{
+    background-color: #adadad;
+}
+
 .card1, .card2, .card3{
     margin: 20px;
 }

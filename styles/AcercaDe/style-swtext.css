@@ -1,13 +1,19 @@
+body{ 
+  background-color: black;
+  background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+}
+
 .sw-container {
   overflow: hidden;
   background-color: black;
   background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+  height: 70vh;
 }
 
 .sw-container h2 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 0px 0;
   font-size: 5rem;
 }
 
@@ -31,11 +37,12 @@
 #startButton {
   background-color: transparent;
   border: none;
+
 }
 #startButton {
   position: absolute;
-  top: 40%;
-  left: 29%;
+  top: 20%;
+  left: 25%;
 }
 
 .sw-container img{
@@ -63,7 +70,6 @@
   transform: translateY(1000px);
   z-index: 2;
 }
-
 
 
 #startButton.backfade {

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/nav-footer/style-nav-footer.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/error404/styles404.css" />
     <title>Error404</title>
     <!-- styles -->
@@ -13,7 +16,62 @@
     <link rel="stylesheet" href="#" />
     <!-- end contact css -->
   </head>
-  <header></header>
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+      <div class="container-navbar">
+        <a id="isotipo">
+          <img class="isotipo-img" src="../assets/resources/logo-starwatch.png">
+        </a>
+      <div class="container-fluid">
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <img class="isotipo-img" src="../assets/resources/logo-starwatch.png">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item" id="inicio">
+              <a class="nav-link" href="../index.html">inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/error404.html">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/admin.html">administrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="container-fluid" id="login-container">
+        
+        <button type="button" class="btn" id="login" style="display: block;"><a href="/html/usuario/login.html" id="iniciar-sesion">iniciar Sesion</a></button>
+        <div>
+          <div class="btn-group" id="dropdown" style="display: none;">
+            <button type="button" id="btn-avatar"><img id="img-avatar" src="../assets/img/navbar/avatar.png"></button>
+            <button type="button" id="toggle-btn" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+            </button>  
+              <div class="dropdown">
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="error404.html">Perfil</a></li>
+                      <li><a class="dropdown-item" href="error404.html">Mi lista</a></li>
+                      <li><a class="dropdown-item" href="error404.html">Descargas</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href='#' id="logout">Salir</a></li>
+                    </ul>
+                  </div>
+            </div>
+        </div> 
+  
+        <button type="button" class="btn" id="registrar" style="display: block;"><a href="/html/usuario/registro.html" id="registrar">Registrar</a></button>
+      </div>
+  
+    </div>
+    </nav>
+  
+    
+    <script src="../scripts/Navbar/script-navbar.js"></script>
+  </header>
+
    <body class="bg-body error404">
     <main>
         <div class="texto404">
@@ -23,15 +81,6 @@
           
         </div>
     </main>
-    <footer class="footer404">
-      <h2 class="textofooter404 s404">4 0 4</h2>
-      <h2 class="textofooter404">Parece que no pudimos contactar con nuestros servidores</h2>
-     <!-- <button class="textofooter404 inicio404">Inicio</button>-->
-      <a class="textofooter404" href="../index.html">
-        <h3  class="inicio404">Inicio</h3>
-      </a>
-    
-    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -45,4 +94,45 @@
     ></script>
     <!-- end Iconos -->
   </body>
+
+  <footer class="footer fixed-bottom">
+    <div class="social-networks">
+      <div class="box">
+        <a href="/index.html">
+          <img
+            class="logo-footer"
+            src="../assets/resources/logo-starwatch.png"
+            alt="Logo footer"
+          />
+        </a>
+        <div id="link-container">
+          <li class="footer-link">
+            <div class="lightsaber">
+              <label class="hilt" id="on-off"><a href="acerca-de.html"> Acerca de</a></label>
+              <div class="blade" id="blade-acercade"></div>
+              <embed src="https://assets.codepen.io/308367/coolsaber.mp3" type="">
+            </div>
+          </li>
+          <li class="footer-link">
+              <div class="lightsaber">
+                <label class="hilt" id="on-off"><a href="contacto.html">contacto</a></label>
+                <div class="blade" id="blade-contacto"></div>
+                <embed src="https://assets.codepen.io/308367/coolsaber.mp3" type="">
+              </div>
+          </li>
+        </div>
+      </div>
+  
+      <div class="social-icons">
+        <a href="https://www.facebook.com"><img src="../assets/img/footer/facebook.png"></a>
+        <a href="https://www.instagram.com"><img src="../assets/img/footer/instagram.png"></a>
+        <a href="https://www.twitter.com"><img src="../assets/img/footer/equis.png"></a>
+      </div>
+    </div>
+    <div class="group-2">
+      <small>
+        &copy; 2024 <b>FLDSMDFR</b> - Todos los Derechos Reservados.</small>
+    </div>
+  </footer>
+
 </html>

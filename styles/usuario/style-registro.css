@@ -5,7 +5,6 @@
 
 .bg-body{
     background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
-    display: flex;
 }
 
 /* contenedor del formulario */
@@ -20,7 +19,7 @@
 
 .image-container {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     right: 0;
     width: 50vw; /* Ancho igual al ancho de la ventana */
     height: 80vh; /* Altura del 80% de la ventana */
@@ -61,6 +60,7 @@
     font-family: sans-serif;
     font-family: 'StarWars';
     align-self: flex-start;
+    margin-bottom: 10px;
 }
 
 .form-heather h3{
@@ -87,9 +87,12 @@
     display: flex;
     margin-bottom: 15px;
     border: none;
-    font-size: large;
+    font-size: 20px;
     color: white;
     background-color: #00000000;
+    padding: 0;
+    margin-top: 10px;
+    width: 80%;
     
 }
 
@@ -206,7 +209,7 @@
 
   #blade-formulario{
     left: 1px;
-    top: 25px;
+    top: 40px;
   }
   
   .blade::after {

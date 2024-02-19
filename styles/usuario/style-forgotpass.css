@@ -5,7 +5,7 @@
 
 .bg-body{
     background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
-    display: flex;
+    
 }
 
 /* contenedor del formulario */
@@ -86,9 +86,12 @@
     display: flex;
     margin-bottom: 50px;
     border: none;
-    font-size: large;
+    font-size: 20px;
     color: white;
     background-color: #00000000;
+    padding: 0;
+    margin-top: 10px;
+    width: 80%;
     
 }
 
@@ -174,7 +177,7 @@
   .blade {
     position: absolute;
     background: white;
-    height: 10%;
+    height: 7%;
     width: 80%;
     bottom: 100%;
     border-radius: 0 50vw 50vw 0;
@@ -193,7 +196,7 @@
 
   #blade-formulario{
     left: 1px;
-    top: 25px;
+    top: 40px;
   }
   
   .blade::after {

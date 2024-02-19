@@ -12,7 +12,7 @@ a{
 
 .section-intro{
     display: flex;
-    padding: 50px 0px 90px 0px;
+    padding: 50px 0px 0px 0px;
     background-color: black;
     color:#fff;
 }
@@ -166,6 +166,10 @@ a{
 }
 .card-business{
     margin: 20px;
+}
+
+.fa-facebook, .fa-instagram, .fa-twitter{
+    color: white
 }
 
 @media screen and (max-width:1000px){

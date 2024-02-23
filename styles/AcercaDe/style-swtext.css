@@ -34,6 +34,10 @@ body{
   color: var(--main);
 }
 
+.star-wars{
+  padding: 80%;
+}
+
 #startButton {
   background-color: transparent;
   border: none;
@@ -62,11 +66,11 @@ body{
   width: 50%;
   height: 400px;
   transform: perspective(200px) rotateX(14deg);
-  animation: intro 100s linear;
+  animation: intro 70s linear;
   animation-play-state: paused;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  animation-delay: 5s;
+  animation-delay: 3s;
   transform: translateY(1000px);
   z-index: 2;
 }
@@ -130,4 +134,26 @@ body{
       transform: perspective(200px) translateZ(-1000px);
       opacity: 0;
     }
+}
+@media screen and (max-width:800px) {
+.sw-container h2{
+  font-size: 20px;
+}
+
+.sw-container h3{
+  font-size: 20px;
+}
+
+
+.sw-container p{
+  font-size: 10px;
+   line-height: 3rem;
+}
+#sw-text{
+  letter-spacing: 0.5px;
+  animation: intro 120s linear;
+}
+#sw-controls{
+  margin: 0px ;
+}
 }

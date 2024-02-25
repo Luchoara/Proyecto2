@@ -47,3 +47,5 @@ function sesionIniciada(e, nombreUsuario) {
 
 /*Resetear Pass */
 
+// Logout
+

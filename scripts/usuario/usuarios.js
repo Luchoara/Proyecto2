@@ -1,13 +1,22 @@
 // Función para obtener un usuario específico por su alias de usuario
-function obtenerUsuario(alias) {
-	var claveUsuario = alias;
-	var usuario = JSON.parse(localStorage.getItem(claveUsuario));
-	return usuario;
+function obtenerUsuario(usuario) {
+	const usuarioIngresado = usuario;
+	const usuarioDB = JSON.parse(localStorage.getItem(usuarioIngresado));
+
+	if (usuarioIngresado === usuarioDB) {
+		alert("Usuario existente");
+	} else {
+		alert("usuario no existe en la BD");
+	}
+
+	return usuarioIngresado;
 }
 
+export default obtenerUsuario;
+
 // Función para modificar la contraseña de un usuario específico
-function modificarContraseña(alias, nuevaContraseña) {
-	var usuario = obtenerUsuarioPorAlias(alias);
+export function modificarContraseña(alias, nuevaContraseña) {
+	var usuario = obtenerUsuario(alias);
 
 	if (usuario) {
 		// Actualizar la contraseña del usuario
@@ -22,12 +31,13 @@ function modificarContraseña(alias, nuevaContraseña) {
 	}
 }
 
-// Ejemplo de uso:
-var aliasUsuario = "juanito123"; // Alias del usuario cuya contraseña se quiere modificar
-var nuevaContraseña = "nuevaContraseña123"; // Nueva contraseña
+// Validar Usuario ya registrado
+export function usuarioExiste(existe) {
+	localStorage.getItem("usuarios", JSON.parse(usuarios));
 
-if (modificarContraseña(aliasUsuario, nuevaContraseña)) {
-	console.log("Contraseña modificada correctamente.");
-} else {
-	console.log("No se encontró el usuario con el alias especificado.");
+	if (existe === obtenerUsuario) {
+		alert("Usuario existente");
+	} else {
+		alert("usuario no existe en la BD");
+	}
 }

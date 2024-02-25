@@ -11,7 +11,7 @@
 </head>
 
 <header>
-  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container-navbar">
       <a id="isotipo">
         <img class="isotipo-img" src="../assets/resources/logo-starwatch.png">
@@ -29,7 +29,7 @@
             <a class="nav-link" href="../html/error404.html">Categorias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../html/admin.html">administrar</a>
+            <a class="nav-link" id="adminButton" href="../html/admin.html">administrar</a>
           </li>
         </ul>
       </div>
@@ -62,9 +62,84 @@
   </div>
   </nav>
 
-  
-  <script src="../scripts/Navbar/script-navbar.js"></script>
+  <script>
+    function inicializarNavbar() {
+      const login = document.getElementById('login');
+      const logout = document.getElementById('logout');
+      const registrar = document.getElementById('registrar');
+      const dropdown = document.getElementById('dropdown');
+      const adminButton = document.getElementById('adminButton');
+
+      const loggedIn = localStorage.getItem('loggedIn') === 'true';
+
+// Si la sesión está iniciada
+if (loggedIn) {
+  alert('sesion iniciada true');
+    login.style.display = 'none'; // Ocultar el botón de iniciar sesión
+    registrar.style.display = 'none'; // Ocultar el botón de registrar
+    dropdown.style.display = 'block'; // Mostrar el dropdown
+    logout.style.display = 'block'; // Mostrar el botón de cerrar sesión
+} else {
+  alert('sesion iniciada false');
+    login.style.display = 'block'; // Mostrar el botón de iniciar sesión
+    registrar.style.display = 'block'; // Mostrar el botón de registrar
+    dropdown.style.display = 'none'; // Ocultar el dropdown
+    logout.style.display = 'none'; // Ocultar el botón de cerrar sesión
+}
+
+// Verificar si el usuario es administrador
+const isAdmin = localStorage.getItem('admin') === 'true';
+
+// Si el usuario es administrador
+if (isAdmin) {
+  alert('administrador true');
+    adminButton.style.display = 'block'; // Mostrar el botón de administrador
+} else {
+  alert('administrador false');
+    adminButton.style.display = 'none'; // Ocultar el botón de administrador
+}
+}
+    // Función para cerrar sesión
+  function cerrarSesion() {
+
+      const login = document.getElementById('login');
+      const logout = document.getElementById('logout');
+      const registrar = document.getElementById('registrar');
+      const dropdown = document.getElementById('dropdown');
+      const adminButton = document.getElementById('adminButton');
+
+      const loggedIn = localStorage.getItem('loggedIn') === 'true';
+      const isAdmin = localStorage.getItem('admin') === 'true';
+      // Cambiar las variables loggedIn y admin a false
+      localStorage.setItem('loggedIn', false);
+      localStorage.setItem('admin', false);
+
+
+      // Ocultar el dropdown y el botón de logout
+      dropdown.style.display = 'none';
+      logout.style.display = 'none';
+
+      // Mostrar los botones de iniciar sesión y registrar
+      login.style.display = 'block';
+      registrar.style.display = 'block';
+
+      // Ocultar el botón de administrador si el usuario no es admin
+      if (!isAdmin) {
+
+          adminButton.style.display = 'none';
+      }
+
+      location.reload();
+  }
+
+    inicializarNavbar(); // Llamar a la función después de que se carguen los elementos
+    logout.addEventListener('click', function() {
+      cerrarSesion();
+  });
+  </script>
+
 </header>
+
 
   <body>
 

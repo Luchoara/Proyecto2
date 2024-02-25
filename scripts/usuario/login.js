@@ -27,22 +27,6 @@ login.addEventListener("submit", function (event) {
     }
 });
 
-/* Iniciar Sesion y cambiar los estilos de los botones */
-function sesionIniciada(e, nombreUsuario) {
-    let destino = nombreUsuario === 'admin' ? '../../index-admin.html' : '../../index.html';
-    if (e) {
-        location.replace(destino);
-        let loginOff = document.getElementById("loginOff")
-        let loginOn = document.getElementById("loginOn")
-        let dropdown = document.getElementById("dropdown")
-
-        loginOff.style.display = "none"
-        loginOn.style.display = "block"
-        dropdown.style.display = "block"
-    } else {
-        alert("Algo falló")
-    }
-}
 
 
 /*Resetear Pass */

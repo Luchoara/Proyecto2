@@ -94,6 +94,6 @@ export function sesionIniciada(e) {
 			loginOn.style.display = "block"
 			dropdown.style.display = "block"
 	} else {
-			alert((err))
+			alert("Algo falló al iniciar la sesion")
 	}
 }

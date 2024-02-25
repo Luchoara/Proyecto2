@@ -38,16 +38,13 @@ registro.addEventListener("submit", function(event) {
 
 // Validacion
 function validateForm(nombre, apellido, usuarioAlias, email, password, confirmPassword) {
-  
+  //VALIDAR PARTICULARMENTE CADA ITEM
   if (nombre.trim() === '' || apellido.trim() === '' || usuarioAlias.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
       alert("Por favor, completa todos los campos.");
       return false;
   }
 
-  // COMENTADO PARA TESTING, DESCOMENTAR ANTES DE FINALIZAR Y AGREGAR EL 'REQUIRED', "MAXLENGHT" MINLENGHT" EN EL HTML
-
-  let patronPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-+]).{8,}$/;
-  
+  let patronPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-+]).{8,}$/;  
   
   if (!patronPassword.test(password)) {
       alert("La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un carácter especial.");
@@ -63,10 +60,24 @@ function validateForm(nombre, apellido, usuarioAlias, email, password, confirmPa
   return true;
 }
 
-function guardarUsuario(usuario) {
-  // Generar una clave única para el usuario (por ejemplo, basada en su nombre de usuario)
-  let nuevoUsuario = usuario.usuarioAlias;
-
+function guardarUsuario(nuevoUsuario) {
+  // crear un array de usuarios
+  let usuarios = [];
+  // agregar el usuario creado al array de usuarios
+  usuarios.push(nuevoUsuario);
   // Convertir el objeto de usuario a cadena JSON y guardarlo en localStorage
-  localStorage.setItem(nuevoUsuario, JSON.stringify(usuario));
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
+
+// Validar Usuario ya registrado
+function usuarioExiste(existe){
+  localStorage.getItem("usuarios", JSON.parse(usuarios));
+
+  if (existe === usuarios){
+    alert("Usuario existente");
+  }
+  else{
+    alert('usuario no existe en la BD')
+  }
+}
+

@@ -260,3 +260,9 @@
     }
   }
 
+  /* MENSAJE DE ERROR DEBAJO DEL LABEL */
+  .error-mensaje {
+    color: red;
+    font-size: 12px;
+    display: none; /* Oculta inicialmente los mensajes de error */
+}

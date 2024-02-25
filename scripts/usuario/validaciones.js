@@ -1,29 +1,66 @@
 
+// LABELS
 // Funcion para validar los labels del formulario
 export function validarCampos(nombre, apellido, alias, email) {
-	//VALIDAR PARTICULARMENTE CADA ITEM
+	// Objeto para almacenar mensajes de error por campo
+	let errores = {
+			nombre: "",
+			apellido: "",
+			alias: "",
+			email: ""
+	};
+
+	// VALIDAR PARTICULARMENTE CADA ITEM
 	if (nombre === "") {
-		alert("Por favor, ingresa un nombre valido");
-		return false;
+			errores.nombre = "Por favor, ingresa un nombre válido";
 	}
 	if (apellido === "") {
-		alert("Por favor, ingresa un apellido valido");
-		return false;
+			errores.apellido = "Por favor, ingresa un apellido válido";
 	}
 	if (alias === "") {
-		alert("Por favor, ingresa un apellido valido");
-		return false;
+			errores.alias = "Por favor, ingresa un alias válido";
 	}
 	if (email === "") {
-		alert("Por favor, ingresa un email valido");
-		return false;
+			errores.email = "Por favor, ingresa un email válido";
 	}
-	else{
-		console.log("todo bien en los labels");
-	
+
+	// Mostrar los mensajes de error debajo de cada campo del formulario
+	mostrarErrores(errores);
+
+	// Verificar si hay errores
+	for (let campo in errores) {
+			if (errores[campo] !== "") {
+					return false;
+			}
+	}
+
+	// Checkeo
+	console.log("Todo bien en los labels");
+	return true;
+}
+
+// Función para mostrar los mensajes de error debajo de cada campo del formulario
+export function mostrarErrores(errores) {
+	for (let campo in errores) {
+			const campoElemento = document.getElementsByClassName("form-control");
+			const errorElemento = campoElemento.nextElementSibling;
+			
+			// Eliminar cualquier mensaje de error previo
+			if (errorElemento && errorElemento.classList.contains("error-mensaje")) {
+					errorElemento.remove();
+			}
+
+			// Agregar mensaje de error debajo del campo
+			if (errores[campo] !== "") {
+					const mensajeError = document.createElement("span");
+					mensajeError.textContent = errores[campo];
+					mensajeError.classList.add("error-mensaje");
+					campoElemento.parentNode.insertBefore(mensajeError, campoElemento.nextSibling);
+			}
 	}
 }
 
+// PASSWORD
 // Funcion para validar los dos passwords y el patron
 export function validarPassword(password, confirmPassword) {
 	let patronPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*-+]).{8,}$/;
@@ -57,6 +94,6 @@ export function sesionIniciada(e) {
 			loginOn.style.display = "block"
 			dropdown.style.display = "block"
 	} else {
-			alert("Algo falló")
+			alert((err))
 	}
 }

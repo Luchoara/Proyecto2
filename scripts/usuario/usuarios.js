@@ -16,7 +16,7 @@ function modificarContraseña(alias, nuevaContraseña) {
 	}
 }
 
-//* Constructor Usuario *//
+//* Constructor del Usuario *//
 export class Usuario {
 	constructor(nombre,apellido, alias, email, password, superUser) {
 		this.nombre = nombre;
@@ -33,27 +33,31 @@ export class Usuario {
 
 
 
-//* Agregar un usuario al total
+//* agrega el usuario a la lista
 const agregarUsuarioAlTotal = (lista) => {
-
-	localStorage.setItem("usuarios", JSON.stringify(lista))
-	
+	if (lista) {
+			localStorage.setItem("usuarios", JSON.stringify(lista));
+	} else {
+			// Si no se pasa una lista, no hacemos nada
+			console.error("No se pasó una lista de usuarios al agregarUsuarioAlTotal");
+	}
 }
 
 //* Lista de Usuarios *//
-const usuariosTotales = () => {
-	const usuarios = JSON.parse(localStorage.getItem('usuarios'))
-	return usuarios ? usuarios : []
+const obtenerUsuariosTotales = () => {
+	const usuarios = JSON.parse(localStorage.getItem('lista'));
+	return usuarios ? usuarios : [];
 }
 
 //* Guardar el usuario y agregarlo al total
-export const guardarUsuario = (usuario) =>{
-
-	agregarUsuarioAlTotal()
+export const guardarUsuario = (usuario) => {
 	
-	const usuariosTotales = usuariosTotales()
+	// Traer la lista actual de usuarios
+	let usuariosTotales = obtenerUsuariosTotales();
 	
-	usuariosTotales.push(usuario)
+	// Agregar el nuevo usuario a la lista de totales
+	usuariosTotales.push(usuario);
 	
+	// Guardar en la lista
+	agregarUsuarioAlTotal(usuariosTotales);
 }
-

@@ -1,0 +1,90 @@
+header{
+    display: flex;
+    margin: 10px 10px;
+    background-color: grey;
+}
+
+
+.bg-body{
+    background-color: rgb(212, 212, 212);
+}
+
+
+
+/* contenedor del formulario */
+.contenedoor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content{
+    display: flex;
+    padding: 10px 40px ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+
+/* titulo del formulario */
+.form-heather{
+    display: flex;
+    color: black;
+    font-size: 30px;
+    font-family: sans-serif;
+
+}
+/* Boton del formulario */
+.b-send{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+/* footer */
+.footer-site{
+    display: flex;
+    background-color: grey;
+    justify-content: space-around;
+}
+.sign-up-form{
+    display: flex;
+}
+.volver{
+    text-decoration: none;
+    color:black;
+    padding: 2px;
+    display: inline-block;
+}
+
+.form-control{
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: solid 1px rgba(47, 41, 41, 0.873);
+}
+
+.olvidar{
+    color: black;
+
+}
+
+.botonL{
+    color: white;
+    border: none;
+    background: rgb(44, 43, 43);
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size:15px;
+}
+
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #b06AB3;
+    padding-top: 20px;
+}

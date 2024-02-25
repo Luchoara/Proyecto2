@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    align-items: center; /* Alinea el contenido en la parte superior */;
+    justify-content: center;
+    height: 100vh; /* Esto asegura que ocupe el 100% de la altura de la ventana */
+    margin: 0; /* Elimina el margen predeterminado del cuerpo */
+    background: url('../../assets/img/contacto/fondo.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid rgb(255, 255, 0); /* Borde de 2px de ancho de color azul */
+    padding: 20px; /* Espaciado interno para el contenido dentro del borde */
+    background-color: rgba(255, 255, 255, 0.8); /* Añade un fondo blanco semi-transparente */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .container {
+    padding: 20px;
+    border: 5px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  
+  .container:hover {
+    border-color: #ffc107; /* Cambia el color del borde al pasar el mouse */
+    /* transform: translateY(-5px); Mueve el contenedor hacia arriba */
+  }
+  
+  #contactForm {
+    width: 100%;
+    width: 100%;
+    max-width: 400px; /* Limita el ancho del formulario para mejor visualización en dispositivos grandes */
+    text-align:center;
+  }
+
+.form-group {
+  margin-bottom: 15px; /* Ajusta el espacio entre los elementos del formulario */
+}
+
+
+.form-group {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 50%;
+}
+
+/* ==================BOTÓN ENVIAR========================*/
+#botonEnviar {
+  background-color: #ffc107; /* Color de fondo inicial */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Animación de color de fondo */
+}
+
+#botonEnviar:hover {
+  background-color: yellow; /* Cambio de color de fondo al pasar el mouse */
+  animation: bounce 0.5s ease; /* Animación al pasar el mouse */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+button {
+  display: block; /* Coloca el botón en una nueva línea */
+  margin-top: 15px; /* Espacio entre los campos y el botón */
+  margin-left: auto; /* Mueve el botón hacia la izquierda */
+  margin-right: auto; /* Mueve el botón hacia la derecha */
+}

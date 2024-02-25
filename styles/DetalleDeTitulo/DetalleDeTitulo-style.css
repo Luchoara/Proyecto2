@@ -1,0 +1,213 @@
+
+
+body{
+    background-color: #1a1d29;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: white;
+    margin-top: 50px;
+    
+}
+
+
+.textoDetalle{
+    color: white;
+    text-decoration: none;
+    
+}
+.textoInformacion{
+    color: white;
+    text-decoration: none;
+    transform: scale(1);
+    transition: 0.2s ease-in;
+    filter: brightness(1);
+}
+
+.textoInformacion:hover{
+    transform: scale(1.02);
+}
+
+.titulo-DP{
+    
+    max-width: 341px;
+    min-width: 100px;;
+    width: 35vw;
+    padding-top: 56px;
+    padding-bottom: 16px;
+}
+
+.iconitos{
+    height: 20px;
+    margin-right: 4px;
+    margin-top: 10px;
+}
+ 
+.descripcion-DP{
+    font-size: 20px;
+    letter-spacing: -.1px;
+    line-height: 1.6;
+    display: flex;
+    width: 50vw;
+    height: 20vh;
+    color: white;
+}
+
+.caracteristicas-DP{
+    display: flex;
+    font-size: 15px;
+}
+
+.ver-ahora{
+    width: 150px;
+    height: 50px;
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+}
+
+.ver-ahora:hover{
+    background-color: rgb(153, 152, 152);
+}
+.fondo-DP{
+    background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
+    background-size: cover;
+   padding-bottom: 150px;
+}
+
+.alinear{
+    margin-left: 50px;
+}
+
+.palaizq{
+    margin-left: -5px ;
+}
+
+
+
+
+
+.seleccionador button{
+    border: none;
+    background-color: transparent;
+    color: rgb(178, 178, 178);
+    transition: border-color 0.2s ease-in;
+    border-bottom: 2px solid transparent;
+    font-size: 20px;
+    margin:5px
+}
+
+.seleccionador button:hover{
+    border-bottom: 3px solid white;
+    border-radius: 2px;
+}
+
+
+.detalles-texto{
+    font-size: 22px;
+    line-height: 1.6;
+    width: 50vw;
+    height: 20vh
+
+}
+
+.detalles-titulo{
+    margin-bottom: 40px;
+}
+.hrmirey{
+    border: solid 2px #ffffff;
+    width: 50%;
+}
+
+#temporadas{
+    color: white;
+    border-bottom: 3px solid white;
+    border-radius: 2px;
+    
+}
+
+.temporadas-seleccionador button{
+    border: none;
+    background-color: transparent;
+    color: rgb(178, 178, 178);
+    transition: border-color 0.2s ease-in;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin:5px;
+    
+}
+
+.temporadas-seleccionador button:hover{
+    border-bottom: 3px solid white;
+    border-radius: 2px;
+}
+
+#temporada-1{
+    color: white;
+    border-bottom: 3px solid white;
+    border-radius: 2px;
+}
+
+
+
+@media (max-width: 1240px) {
+    body{
+        background-size: 100%;
+        
+    }
+    .descripcion-DP{
+        font-size: 15px;
+        width: auto;
+        height: auto;
+    }
+    .seleccionador button{
+        font-size: 15px;
+    }
+
+    .detalles-texto{
+        font-size: 15px;
+        text-align:justify;
+        margin-left: 0px;
+        margin-right: 60px;
+        width: auto;
+        height: auto;
+    }
+   
+    .fondo-DP{
+        padding-bottom: 20px;
+    }
+
+    #detalles{opacity: 0;}
+
+    .titulo-DP{
+        margin-bottom: 30%;
+    }
+    .alinear{
+        
+        margin: 0px 15px 10px
+    }
+    /* #temporadas-aqui{
+        margin-left: -130px ;
+        position:relative;
+    }*/
+    
+}     
+
+
+
+@media (min-width: 108px) {
+    .carrusel{
+        width: 225px;
+    }
+    .carrusel a img {
+        width: 200px;
+        height: 150px;
+    }
+}

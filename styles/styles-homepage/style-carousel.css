@@ -28,7 +28,10 @@ a{
 @media(max-width:768px) {
     .carousel{
         margin: 0px 0px;
+
+    
     }
+
 }
 
 .carousel h2{

@@ -159,6 +159,26 @@ a{
     }
 }
 
+@media screen and (max-width:400px) {
+  .isotipo-img{
+    width: 70px;
+    margin-top: 10px;
+  }
+  .btn{
+    width: 40%;
+    font-size: 8px;
+  }
+  #login-container{
+    margin-left: -20px;
+    margin-right: 20px;
+  }
+  
+  #registrar.btn{
+    padding-right: 25px;
+    margin-left: 2px;
+  }
+  }
+
 /************FOOTER************/
 .footer{
     width: 100%;
@@ -383,4 +403,10 @@ a{
     pointer-events: 0;
     width: 0;
     height: 0;
+  }
+
+  @media screen and (max-width:400px){
+    .logo-footer{
+      width: 100px;
+    }
   }

@@ -15,6 +15,11 @@ resetPassForm.addEventListener('submit', function(e) {
         alert('La contraseña y la confirmación de contraseña no coinciden.');
         return;
     }
+
+    if (!validarContraseña(nuevoPassword)) {
+        alert('La contraseña debe tener al menos 8 caracteres, 1 número y 1 letra mayúscula.');
+        return;
+    } 
     //  Traer los  usuarios
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
@@ -26,6 +31,7 @@ resetPassForm.addEventListener('submit', function(e) {
         return;
     }
 
+    
     // Actualizar la contraseña del usuario
     usuarioEncontrado.password = nuevoPassword;
     
@@ -33,7 +39,13 @@ resetPassForm.addEventListener('submit', function(e) {
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
     // Mostrar un mensaje de éxito
-    alert('Contraseña actualizada correctamente.');
+    alert('Contraseña actualizada correctamente. Ingrese a su cuenta');
 
-    
+    location.replace("/html/usuario/login.html")
 });
+
+function validarContraseña(password) {
+    // Verificar si la contraseña tiene al menos 8 caracteres, 1 número y 1 letra mayúscula
+    const regex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
+    return regex.test(password);
+}
